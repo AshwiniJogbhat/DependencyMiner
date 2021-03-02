@@ -1,2 +1,2 @@
 # DependencyMiner
-Thesis Project involves creating precise model
+Thesis Project involves creating precise 
