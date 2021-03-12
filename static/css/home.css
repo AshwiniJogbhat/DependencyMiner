@@ -1,0 +1,207 @@
+body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  /* Fixed sidenav, full height */
+  .sidenav {
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    z-index: 1;
+    /* top: 0; */
+    /* left: 0; */
+    background-color: rgb(66, 123, 128);
+    overflow-x: hidden;
+    padding-top: 10px;
+  }
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 767px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    /* .sidenav {height: auto} */
+    }
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+    padding: 9px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  .sidenav li{
+    padding-left: 9px;
+    padding-right: 9px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .sidenav .btn-default{
+      display: block;
+      margin-left: 9px;
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Add an active class to the active dropdown button */
+  .active {
+    background-color: green;
+    color: white;
+  }
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    /* background-color: #262626; */
+    padding-left: 8px;
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+
+  /* @media screen and (max-width: 767px) {
+    .sidenav  {
+        height: auto;
+        padding: 10px;
+    } */
+
+  header {
+    margin-top: 0;
+    background-color: rgb(66, 123, 128);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  /* .row.content { height: auto;} */
+
+
+  /* ********************************************* */
+label {
+    width: 100px;
+    display: inline-block;
+}
+.range-slider {
+    margin: 10px 0 40px 0;
+    width: 100%
+    
+    /* margin: 60px 0 0 0%; */
+}
+/* .range-slider {
+    width: 25%;
+} */
+.range-slider__range {
+    -webkit-appearance: none;
+    width: calc(100% - (73px));
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    /* background: #d7dcdf; */
+    outline: none;
+    opacity: 0.7;
+    padding: 0;
+    margin: 0;
+}
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.range-slider__range::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* background: #2c3e50; */
+    background: #0596af;
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
+}
+/* .range-slider__range::-webkit-slider-thumb:hover { */
+.range-slider__range:hover {     
+    /* background: #1abc9c; */
+    background: #2c3e50;;
+}
+.range-slider__range:active::-webkit-slider-thumb {
+    background: #2c3e50;;
+}
+.range-slider__range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 50%;
+    background: #2c3e50;
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
+}
+.range-slider__range::-moz-range-thumb:hover {
+    background: #2c3e50;
+}
+.range-slider__range:active::-moz-range-thumb {
+    background: #2c3e50;
+}
+.range-slider__range:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px #2c3e50;;
+}
+.range-slider__value {
+    display: inline-block;
+    position: absolute;
+    width: 60px;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    background: #2c3e50;
+    padding: 5px 10px 5px 5px;
+    margin-left: 10px;
+}
+.range-slider__value:after {
+    position: absolute;
+    top: 6px;
+    left: -7px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-right: 7px solid #0596af;
+    border-right: 7px solid #2c3e50;
+    border-bottom: 7px solid transparent;
+    content: '';
+}
+::-moz-range-track {
+    background: #d7dcdf;
+    border: 0;
+}
+input::-moz-focus-inner, input::-moz-focus-outer {
+    border: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.sidebar-header {
+    padding: 15px;
+    background: #416e8a;
+    text-align: left;
+}

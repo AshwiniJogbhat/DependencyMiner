@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Dependency Miner</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{{ url_for('static', path='/css/home.css')}}" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script  src="{{ url_for('static', path='/js/index.js')}}"></script>
+</head>
+<body>
+<header class="container-fluid">
+  <h1>Long-Term Dependency Miner</h1>
+</header>
+<div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Miner Bar</h2>
+        </div>
+        <a href="/">Event Log</a>
+        <button class="dropdown-btn">Threshold Variation 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+         <li><div class="range-slider">
+            <label for="support">Support</label>
+            <input class="range-slider__range" type="range" value="0.5" min="0" max="1" id='support' step='0.01' style="width:75% ;display: inline-block;">
+            <span class="range-slider__value" style="width: 20%;">0</span>
+          </div></li>
+         <li><div class="range-slider">
+            <label for="support">Confidence</label>
+            <input class="range-slider__range" type="range" value="0.5" min="0" max="1" step="0.01" step='0.01' id='confidence' style="width:75% ;display: inline-block;">
+            <span class="range-slider__value" style="width: 20%;">0</span>
+          </div></li>
+          <li><div class="range-slider">
+            <label for="support">Lift</label>
+            <input class="range-slider__range" type="range" value="30" min="1" max="100" id='lift'  style="width:75% ;display: inline-block;">
+            <span class="range-slider__value" style="width: 20%;">0</span>
+          </div></li>
+          <button type="button" class="btn btn-default" onclick="discoverModel()">Discover Model</button>
+        </div>
+        <button class="dropdown-btn">Quality Measure 
+          <i class="fa fa-caret-down"></i>
+        </button>
+      <div class="dropdown-container" style="pointer-events: none;">
+        <li style="padding: 9px 8px 6px 16px;">Fitness:{{fitness}}</li>
+        <li style="padding: 9px 8px 6px 16px;">Precision: {{precision}}</li>
+      </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+</body>
+</html> 

@@ -1,0 +1,2 @@
+def getLog():
+    return "Hello"
