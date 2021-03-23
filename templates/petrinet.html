@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %} Petri Net {% endblock title %}
+{% block style %}
+.img-fluid{
+    margin-right: 10%;
+    margin-top: 5%;
+    text-align: center
+}
+.slider{
+    margin-top: 40%;
+    padding-left: 10px;
+    width: 75%
+}
+{% endblock %}
+{% block content %}
+<div>
+    <img src={{image_url}} class="img-fluid" alt="Responsive image">
+</div>
+<div class="slider">
+    <div class="range-slider">
+        <label for="support">Support</label>
+        <input class="range-slider__range" type="range" value="0.5" min="0" max="1" id='support' step='0.01' style="width:50% ;display: inline-block;">
+        <span class="range-slider__value" style="width: 7%;">0</span>
+    </div>
+    <div class="range-slider">
+        <label for="support">Confidence</label>
+        <input class="range-slider__range" type="range" value="0.5" min="0" max="1" step="0.01" step='0.01' id='confidence' style="width:50% ;display: inline-block;">
+        <span class="range-slider__value" style="width: 7%;">0</span>
+    </div></li>
+    <div class="range-slider">
+        <label for="support">Lift</label>
+        <input class="range-slider__range" type="range" value="30" min="1" max="100" id='lift'  style="width:50% ;display: inline-block;">
+        <span class="range-slider__value" style="width: 7%;">0</span>
+    <!-- </div>
+        <button type="button" name="discover" class="btn btn-primary" style="float: right;" onclick="discoverModel()">Discover Model</button>
+    </div>  -->
+</div>
+
+{% endblock content %}
+{% block script %}
+<script>
+    $(document).ready(function(){
+        var rangeSlider = function(){
+            var slider = $('.range-slider'),
+                range = $('.range-slider__range'),
+                value = $('.range-slider__value');
+                
+            slider.each(function(){
+                value.each(function(){
+                var value = $(this).prev().attr('value');
+                $(this).html(value);
+                });
+
+                range.on('input', function(){
+                $(this).next(value).html(this.value);
+                });
+            });
+            var support = ($('#support')[0].value);
+            var confidence = ($('#confidence')[0].value);
+            var lift = ($('#lift')[0].value);
+        };
+        rangeSlider();
+    });
+</script>
+{% endblock %}

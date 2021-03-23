@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %} Event Log{% endblock title %} 
+
+{% block content %}
+
+
+<form action="/eventlog" enctype="multipart/form-data" method="POST"">
+    <h3 class="mt-4" style="color:#00529F; margin-left:13px">Event Logs</h3>
+    <div class="container mt-4">
+        <div class="custom-file mb-3">
+          <input type="file" class="custom-file-input" id="customFile" style="width: 100%; margin-left:200px;" name="file">
+          <label class="custom-file-label" for="customFile" style="width: 100%;">Choose file</label>
+        </div>
+          <button type="submit" class="btn btn-primary">Upload</button>
+    </div>
+</form>
+<br/>
+<form method = "POST" action="/eventLog">
+    <div class="container mt-4">
+
+      <select name="list_of_logs" class="custom-select" size="10">
+          {% for eventlog in list_of_eventlogs %}
+              <option value="{{eventlog}}" style="color: black;">{{eventlog}}</option>
+          {% endfor %}
+      </select>
+      <input style="margin-top: 10px;" data-toggle="tooltip" data-placement="top" title="Set as the input" type = "submit" class="btn btn-success" value = "Set" name= "action" id ='setButton' />
+      <input style="margin-top: 10px;" type = "submit" class="btn btn-danger" value = "Delete" name= "delete" id ='deleteButton'/>
+      <input style="float: right; margin-top: 10px;" type = "submit" class="btn btn-info" value = "Download" name= "download" id ='downloadButton'/>
+    </div>
+</form>
+
+<div class=" container mt-4">
+  {% if eventlog_name %}
+    <p> {{eventlog_name}} has been set as the input ... </p>
+  {% endif %}
+  {% if log_attributes %}
+    {% for k,v in log_attributes.items() %}
+      {% if k == 'no_traces' %}
+        <p id="no_trace"> No of traces: {{v}} </p>
+      {% elif k == 'no_events' %}
+        <p id="no_event"> No of events: {{v}} </p>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+</div>
+</div>
+          
+{% endblock content %}
+
+{% block script %}
+<script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+{% endblock script %}

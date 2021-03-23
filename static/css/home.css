@@ -5,14 +5,15 @@ body {
   /* Fixed sidenav, full height */
   .sidenav {
     height: 100%;
-    width: 280px;
+    width: 250px;
     position: fixed;
     z-index: 1;
     /* top: 0; */
     /* left: 0; */
-    background-color: rgb(66, 123, 128);
+    /* background-color: rgb(169, 175, 175); */
+    background-color: black; */
     overflow-x: hidden;
-    padding-top: 10px;
+    padding-top: 0px;
   }
 
 /* Some media queries for responsiveness */
@@ -29,8 +30,8 @@ body {
   .sidenav a, .dropdown-btn {
     padding: 9px 8px 6px 16px;
     text-decoration: none;
-    font-size: 20px;
-    color: #818181;
+    font-size: 18px;
+    color: grey;
     display: block;
     border: none;
     background: none;
@@ -39,7 +40,7 @@ body {
     cursor: pointer;
     outline: none;
   }
-  .sidenav li{
+  /* li{
     padding-left: 9px;
     padding-right: 9px;
     text-decoration: none;
@@ -52,12 +53,12 @@ body {
     text-align: left;
     cursor: pointer;
     outline: none;
-  }
+  } */
 
-  .sidenav .btn-default{
+  /* .btn-default{
       display: block;
       margin-left: 9px;
-  }
+  } */
   
   /* On mouse-over */
   .sidenav a:hover, .dropdown-btn:hover {
@@ -91,14 +92,16 @@ body {
 
   header {
     margin-top: 0;
-    background-color: rgb(66, 123, 128);
+    /* background-color: rgb(66, 123, 128); */
+    /* background-color: rgb(169, 175, 175); */
+    background-color: black;
     color: white;
     padding: 5px;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
   }
 
-  /* .row.content { height: auto;} */
+  .row.content { height: auto;}
 
 
   /* ********************************************* */
@@ -107,7 +110,7 @@ label {
     display: inline-block;
 }
 .range-slider {
-    margin: 10px 0 40px 0;
+    margin: 5px 0 20px 0;
     width: 100%
     
     /* margin: 60px 0 0 0%; */
@@ -202,6 +205,15 @@ input::-moz-focus-inner, input::-moz-focus-outer {
 
 .sidebar-header {
     padding: 15px;
-    background: #416e8a;
+    /* background: #416e8a; */
+    /* background: rgb(169, 175, 175); */
+    background: rgb(51, 51, 51);
     text-align: left;
+    color: grey;
 }
+
+.main{
+  margin-left: 250px;
+  padding-top: 5px;
+}
+
