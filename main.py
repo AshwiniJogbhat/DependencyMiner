@@ -11,7 +11,7 @@ from os import listdir
 from os.path import isfile, join
 
 import settings
-from Miner.disocvery import import_event_log, to_Petrinet, to_Processtree
+from Miner.disocvery import import_event_log, to_Petrinet, to_Processtree, discover_dependency_values
 
 settings.init()
 app = FastAPI()
@@ -24,6 +24,10 @@ log_attributes = {}
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
+    file_path = os.path.join(settings.EVENT_LOGS_PATH, 'EventLog.xes') 
+    settings.EVENT_LOG_PATH = file_path
+    log = import_event_log(file_path)
+    settings.EVENT_LOG = log
     return templates.TemplateResponse("base.html", {"request": request})
 
 @app.get("/eventlog", response_class=HTMLResponse)
@@ -65,7 +69,7 @@ async def form_data(request: Request, list_of_logs: str = Form(default=None), ac
 
 @app.get("/petrinet")
 async def discover_net(request: Request):
-    net_path = to_Petrinet(settings.EVENT_LOG_NAME)
+    net_path = discover_dependency_values()
     return templates.TemplateResponse('petrinet.html', {"request": request, 'image_url': net_path})
 
 @app.get("/processtree")

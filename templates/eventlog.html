@@ -33,6 +33,7 @@
 <div class=" container mt-4">
   {% if eventlog_name %}
     <p> {{eventlog_name}} has been set as the input ... </p>
+    <p> <a href="/petrinet">Petri Net</a> & <a href="/processtree">Process Tree</a> of {{eventlog_name}} log are generated.</p>
   {% endif %}
   {% if log_attributes %}
     {% for k,v in log_attributes.items() %}
@@ -40,7 +41,7 @@
         <p id="no_trace"> No of traces: {{v}} </p>
       {% elif k == 'no_events' %}
         <p id="no_event"> No of events: {{v}} </p>
-      {% endif %}
+      {% endif %}   
     {% endfor %}
   {% endif %}
 
