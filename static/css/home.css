@@ -5,19 +5,19 @@ body {
   /* Fixed sidenav, full height */
   .sidenav {
     height: 100%;
-    width: 250px;
-    position: fixed;
-    z-index: 1;
+    width: 350px;
+    position: fixed !important;
+    /* z-index: 1; */
     /* top: 0; */
     /* left: 0; */
     /* background-color: rgb(169, 175, 175); */
-    background-color: black; */
-    overflow-x: hidden;
-    padding-top: 0px;
+    background-color: black; 
+    /* overflow-x: hidden; */
+    /* padding-top: px; */
   }
 
 /* Some media queries for responsiveness */
-@media screen and (max-height: 767px) {
+@media screen and (max-height: 1200px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
     /* .sidenav {height: auto} */
@@ -25,12 +25,21 @@ body {
     *, *:before, *:after {
         box-sizing: border-box;
     }
+    .container{
+      max-width: 100%;
+  }
+
+    /* @media ((max-height: 1200px) {
+      .container{
+          max-width: 100%;
+      }
+  } */
 
   /* Style the sidenav links and the dropdown button */
-  .sidenav a, .dropdown-btn {
+  .sidenav  a, .dropdown-btn {
     padding: 9px 8px 6px 16px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 24px;
     color: grey;
     display: block;
     border: none;
@@ -62,21 +71,22 @@ body {
   
   /* On mouse-over */
   .sidenav a:hover, .dropdown-btn:hover {
+    background-color: grey;
     color: #f1f1f1;
   }
   
   /* Add an active class to the active dropdown button */
-  .active {
-    background-color: green;
+  .sidenav a.active {
+    background-color: grey;
     color: white;
   }
   
   /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-  .dropdown-container {
+  /* .dropdown-container {
     display: none;
-    /* background-color: #262626; */
+    /* background-color: #262626; 
     padding-left: 8px;
-  }
+  } */
   
   /* Optional: Style the caret down icon */
   .fa-caret-down {
@@ -91,14 +101,15 @@ body {
     } */
 
   header {
-    margin-top: 0;
     /* background-color: rgb(66, 123, 128); */
     /* background-color: rgb(169, 175, 175); */
     background-color: black;
     color: white;
-    padding: 5px;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
     text-align: center;
-    margin-bottom: 1px;
   }
 
   .row.content { height: auto;}
@@ -213,7 +224,15 @@ input::-moz-focus-inner, input::-moz-focus-outer {
 }
 
 .main{
-  margin-left: 250px;
-  padding-top: 5px;
+  margin-left: 350px;
+  margin-right: 200px;
+  position: relative;
+  overflow-x: hidden;
+  /* padding-top: 0px; */
 }
 
+/* .container {
+  padding: 10px;
+} */
+
+  

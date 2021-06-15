@@ -27,5 +27,6 @@ var discoverModel = function(){
 
 $(document).ready(function(){
   rangeSlider();
-}
-);
+});
+
+

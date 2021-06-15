@@ -19,42 +19,54 @@ def init():
     global PROCESS_TREE
     PROCESS_TREE = None
     
-    global candidates
-    candidates = {}
+    # global candidates
+    # candidates = {}
     
-    global xor_pairs
-    xor_pairs = []
+    # global xor_pairs
+    # xor_pairs = []
     
-    global parent
-    parent = []
+    # global parent
+    # parent = []
     
-    global count_dict
-    count_dict = {}
+    # global count_dict
+    # count_dict = {}
     
-    global sup_dict
-    sup_dict = {}
+    # global sup_dict
+    # sup_dict = {}
     
-    global conf 
-    conf = {}
+    # global conf 
+    # conf = {}
 
-    global lift
-    lift = {}
+    # global lift
+    # lift = {}
     
-    global support
-    support = {}
+    # global support
+    # support = {}
     
-    global confidence
-    confidence = {}
+    # global confidence
+    # confidence = {}
     
-    global source
-    source = set()
+    # global source
+    # source = set()
     
-    global target
-    target = set()
+    # global target
+    # target = set()
     
     global PETRI_NET
     global I_MARKS
     global F_MARKS
+    global PRECISE_NET
     PETRI_NET = None 
     I_MARKS = None
     F_MARKS = None
+    PRECISE_NET = None
+    
+    global sink_dict
+    global src_dict
+    sink_dict = {}
+    src_dict = {}
+    
+    global RULES
+    global XOR_TREES
+    RULES = {}
+    XOR_TREES = {}

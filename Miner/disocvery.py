@@ -112,7 +112,7 @@ def discover_dependency_values():
 # Main algorithm or function
 # First, it adds control places to all source and target XOR children pair.
 # then it calls for adding dependency to petri net 
-def repair_petrinet(net, pairs, lift_val = 1.1, conf_val = 0.8, sup_val=0):
+def repair_petrinet(net, pairs, lift_val = 2, conf_val = 0.8, sup_val=0):
 
     net = add_control_places(net, pairs)
     net = add_dependency(pairs, net)  
@@ -128,7 +128,7 @@ def repair_petrinet(net, pairs, lift_val = 1.1, conf_val = 0.8, sup_val=0):
     return net_path
     
    
-def add_dependency(pairs, net, threshold_up=False, lift_val = 1.1, conf_val = 0.4, sup_val=0.2 ):
+def add_dependency(pairs, net, threshold_up=False, lift_val = 2, conf_val = 0.4, sup_val=0.2 ):
     for pair in pairs:
         # create tau transition for that pair
         tau_t = PetriNet.Transition(f"tau_{pair[0]}{pair[1]}", None)
@@ -179,7 +179,7 @@ def add_dependency(pairs, net, threshold_up=False, lift_val = 1.1, conf_val = 0.
         #         if str(trans) == str(tau_t):
         #             utils.remove_transition(trans)
         #              in_arcs = trans.in_arcs
-    net = get_sound_petrinet(net) 
+    #net = get_sound_petrinet(net) 
     net = utils.remove_unconnected_components(net)
             
     return net             

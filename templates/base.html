@@ -17,28 +17,25 @@
       
     </head>
     <body>
-        <header class="container-fluid">
-            <h1>Long-Term Dependency Miner</h1>
-        </header>
         <div class="container-fluid">
             <div class="row content">
                 <div class="col-sm-3 sidenav" id="sidebar">
                     <div class="sidebar-header">
-                        <h2>Dependency Miner</h2>
+                        <h2>Long-Term Dependency Miner</h2>
                     </div>
                   <div>
-                    <a href="/eventlog">Event Log</a>
-                    <a href="/petrinet">Petri Net</a>
+                    <a class = "active" href="/">Event Log</a>
                     <a href="/processtree">Process Tree</a>
+                    <a href="/petrinet">Petri Net</a>
                   </div>
                 </div>
-                <div class="row content">
-                <div class="col-sm-9 main" id=content>
+              
+                
+                <div class="col-sm-9 main" id="content">
                   {% block content %}{% endblock content %}
                 </div>
-            </div>
+                </div>
         </div>
         {% block script %} {% endblock script %}
     </body>
 </html>
-

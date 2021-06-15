@@ -4,43 +4,83 @@
 {% block style %}
 .img-fluid{
     margin-right: 10%;
-    margin-top: 5%;
+    margin-top: 10%;
+    margin-bottom: 10%;
     text-align: center
 }
 .slider{
-    margin-top: 40%;
+    margin-top: 10%;
     padding-left: 10px;
-    width: 75%
+    width: 100%
+}
+.custom-checkbox{
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+.float-container {
+  border: 3px solid black;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #EBF4FA;
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 10px;
+  
 }
 {% endblock %}
 {% block content %}
+
 <div>
     <img src={{image_url}} class="img-fluid" alt="Responsive image">
-</div>
-<div class="slider">
-    <div class="range-slider">
-        <label for="support">Support</label>
-        <input class="range-slider__range" type="range" value="0.5" min="0" max="1" id='support' step='0.01' style="width:50% ;display: inline-block;">
-        <span class="range-slider__value" style="width: 7%;">0</span>
+</div> 
+
+<form method="POST" action="">
+    <div class="float-container">
+    <h2>Settings</h2>
+        <!-- <div class="float-child">
+            <h4>Candidate Pairs:</h4>
+            <div><p><h5>Support:</h5> {A1: 0.5, (A1, D1): 0.5, D1: 0.5, (A1, D2): 0.0, D2: 0.5, A2: 0.5, (A2, D1): 0.0, (A2, D2): 0.5} </p></div>
+            <div><p><h5>Confidence</h5> {(A1, D1): 1.0, (A1, D2): 0.0, (A2, D1): 0.0, (A2, D2): 1.0} </p></div>
+            <div><p><h5>Lift</h5> {(A1, D1): 2.0, (A1, D2): 0.0, (A2, D1): 0.0, (A2, D2): 2.0}</p> </div>
+        </div> -->
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck1" name="soundCheckbox">
+            <label class="custom-control-label" for="customCheck1">Sound Model</label>
+        </div> 
+        <div>
+            <div class="slider">
+                <div class="range-slider">
+                    <label for="support">Support</label>
+                    <input class="range-slider__range" type="range" value="0.5" min="0" max="1" id='support' name='support' step='0.01' style="width:50% ;display: inline-block;">
+                    <span class="range-slider__value" style="width: 7%;">{{support}}</span>
+                </div>
+                <div class="range-slider">
+                    <label for="support">Confidence</label>
+                    <input class="range-slider__range" type="range" value="0.5" min="0" max="1" step="0.01" step='0.01' id='confidence' name='confidence' style="width:50% ;display: inline-block;">
+                    <span class="range-slider__value" style="width: 7%;">{{confidence}}</span>
+                </div>
+                <div class="range-slider">
+                    <label for="support">Lift</label>
+                    <input class="range-slider__range" type="range" value="3" min="1" max="10" id='lift' name='lift' step='0.01' style="width:50% ;display: inline-block;">
+                    <span class="range-slider__value" style="width: 7%;">value</span>
+                </div>
+            </div>
+        </div>
+        <input name="processButton" type="submit" class="btn btn-primary" value="Process" id="processButton"/>
     </div>
-    <div class="range-slider">
-        <label for="support">Confidence</label>
-        <input class="range-slider__range" type="range" value="0.5" min="0" max="1" step="0.01" step='0.01' id='confidence' style="width:50% ;display: inline-block;">
-        <span class="range-slider__value" style="width: 7%;">0</span>
-    </div></li>
-    <div class="range-slider">
-        <label for="support">Lift</label>
-        <input class="range-slider__range" type="range" value="30" min="1" max="100" id='lift'  style="width:50% ;display: inline-block;">
-        <span class="range-slider__value" style="width: 7%;">0</span>
-    <!-- </div>
-        <button type="button" name="discover" class="btn btn-primary" style="float: right;" onclick="discoverModel()">Discover Model</button>
-    </div>  -->
-</div>
+</form>
+<br>
+<br>
 
 {% endblock content %}
 {% block script %}
 <script>
     $(document).ready(function(){
+        console.log("READY")
         var rangeSlider = function(){
             var slider = $('.range-slider'),
                 range = $('.range-slider__range'),
