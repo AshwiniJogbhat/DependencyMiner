@@ -3,10 +3,7 @@ from pm4py.objects.petri_net.utils import petri_utils as pn_util
 from pm4py.objects.process_tree.obj import Operator as pt_opt
 
 import settings
-
-sink_dict = {}
-src_dict = {}
-
+import copy
 
 def apply(tree, parameters=None):
     '''
@@ -62,9 +59,6 @@ def _add_src_sink_transitions(net, p_s, p_t):
 
 
 def construct_sequence_pattern(net, sub_nets):
-#     print("Sequence")
-#     gviz = pn_visualizer.apply(net, im, fm)
-#     pn_visualizer.view(gviz)
     places = [None] * (len(sub_nets) + 1)
     for i in range(len(sub_nets) + 1):
         places[i] = pn_util.add_place(net)
@@ -90,9 +84,6 @@ def construct_xor_pattern(net, sub_nets):
 
 
 def construct_and_pattern(net, sub_nets):
-#     print("AND Pattern")
-#     gviz = pn_visualizer.apply(net, im, fm)
-#     pn_visualizer.view(gviz)
     p_s = [None] * len(sub_nets)
     p_t = [None] * len(sub_nets)
     for i in range(len(sub_nets)):
@@ -119,3 +110,17 @@ def construct_loop_pattern(net, sub_nets):
     pn_util.add_arc_from_to(_get_sink_transition(sub_nets[1]), p_s, net)
     net, ini, fin = _add_src_sink_transitions(net, p_s, p_t)
     return net, obj.Marking(), obj.Marking()
+
+
+def deepcopy_net():
+    im = obj.Marking()
+    fm = obj.Marking()
+    p_net = copy.deepcopy(settings.PETRI_NET_ORIG)
+    for place in p_net.places:
+        for p_ini in settings.I_MARKS_ORIG:
+            if str(p_ini) == str(place):
+                im = obj.Marking({place : 1})
+        for p_f in settings.F_MARKS_ORIG:
+            if str(p_f) == str(place):
+                fm = obj.Marking({place : 1})
+    return p_net, im, fm

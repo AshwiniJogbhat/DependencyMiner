@@ -4,9 +4,13 @@
 {% block style %}
 .img-fluid{
     margin-right: 10%;
-    margin-top: 10%;
+    margin-top: 7%;
     margin-bottom: 10%;
     text-align: center
+}
+.dropdown{
+    float:right;
+    margin-bottom: 5%;
 }
 .slider{
     margin-top: 10%;
@@ -18,8 +22,11 @@
     margin-bottom: 5%;
 }
 
-.float-container {
-  border: 3px solid black;
+.evaluator{
+    margin-top: 0%;
+}
+.container {
+  #border: 3px solid black;
   padding: 10px;
   overflow: hidden;
   background-color: #EBF4FA;
@@ -31,56 +38,135 @@
   padding: 10px;
   
 }
+
+.badge-info{
+    margin-right: 7%
+}
+.dependency-rules{
+    margin-top: 10%;
+    #color: #008b8b;
+}
+
 {% endblock %}
 {% block content %}
+<div class="container-fluid">
+    <div>
+        <img src={{image_url}} class="img-fluid" id="myimage" alt="Responsive image"> 
+    </div>
 
-<div>
-    <img src={{image_url}} class="img-fluid" alt="Responsive image">
-</div> 
+    <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            Download
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="extension">
+            <a class="dropdown-item" id="pnml">.PNML</a>
+            <a class="dropdown-item" id="svg">.SVG</a>
+        </div>
+    </div>
+</div>
 
-<form method="POST" action="">
-    <div class="float-container">
-    <h2>Settings</h2>
-        <!-- <div class="float-child">
-            <h4>Candidate Pairs:</h4>
-            <div><p><h5>Support:</h5> {A1: 0.5, (A1, D1): 0.5, D1: 0.5, (A1, D2): 0.0, D2: 0.5, A2: 0.5, (A2, D1): 0.0, (A2, D2): 0.5} </p></div>
-            <div><p><h5>Confidence</h5> {(A1, D1): 1.0, (A1, D2): 0.0, (A2, D1): 0.0, (A2, D2): 1.0} </p></div>
-            <div><p><h5>Lift</h5> {(A1, D1): 2.0, (A1, D2): 0.0, (A2, D1): 0.0, (A2, D2): 2.0}</p> </div>
-        </div> -->
-        <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck1" name="soundCheckbox">
-            <label class="custom-control-label" for="customCheck1">Sound Model</label>
-        </div> 
-        <div>
-            <div class="slider">
-                <div class="range-slider">
-                    <label for="support">Support</label>
-                    <input class="range-slider__range" type="range" value="0.5" min="0" max="1" id='support' name='support' step='0.01' style="width:50% ;display: inline-block;">
-                    <span class="range-slider__value" style="width: 7%;">{{support}}</span>
-                </div>
-                <div class="range-slider">
-                    <label for="support">Confidence</label>
-                    <input class="range-slider__range" type="range" value="0.5" min="0" max="1" step="0.01" step='0.01' id='confidence' name='confidence' style="width:50% ;display: inline-block;">
-                    <span class="range-slider__value" style="width: 7%;">{{confidence}}</span>
-                </div>
-                <div class="range-slider">
-                    <label for="support">Lift</label>
-                    <input class="range-slider__range" type="range" value="3" min="1" max="10" id='lift' name='lift' step='0.01' style="width:50% ;display: inline-block;">
-                    <span class="range-slider__value" style="width: 7%;">value</span>
+<form method="POST" action="/petrinet">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h5 style="color:navy; font-weight: bold;">Parameter Threshold Settings:</h5>
+                <div class="slider">
+                    <div class="range-slider">
+                        <label for="support">Support</label>
+                        <input class="range-slider__range" type="range" min="0" max="1" id='support' name='support' step='0.01' style="width:50% ;display: inline-block;">
+                        {% if support %}
+                            <span class="range-slider__value" style="width: 7%;">{{support}}</span> 
+                        {% else %}
+                            <span class="range-slider__value" style="width: 7%;">0.5</span>
+                        {% endif %} 
+                    </div> 
+                    <div class="range-slider">
+                        <label for="confidence">Confidence</label>
+                        <input class="range-slider__range" type="range" min="0" max="1" step="0.01" id='confidence' name='confidence' style="width:50% ;display: inline-block;">
+                        {% if confidence %}
+                            <span class="range-slider__value" style="width: 7%;">{{confidence}}</span>
+                        {% else %}
+                            <span class="range-slider__value" style="width: 7%;">0.5</span>
+                        {% endif %} 
+                    
+                    </div>
+                    <div class="range-slider">
+                        <label for="lift">Lift</label>
+                        <input class="range-slider__range" type="range" min="1" max="10" id='lift' name='lift' step='0.01' style="width:50% ;display: inline-block;">
+                        {% if lift %}
+                            <span class="range-slider__value" style="width: 7%;">{{lift}}</span>
+                        {% else %}
+                            <span class="range-slider__value" style="width: 7%;">1</span>
+                        {% endif %} 
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        {% if soundCheckbox == 'on' %}
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" name="soundCheckbox" checked>
+                        {% else %}
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" name="soundCheckbox">
+                        {% endif %}
+                        <label class="custom-control-label" for="customCheck1">Sound Model</label>
+                    </div>
+                    <div class="processButton">
+                        <input name="processButton" type="submit" class="btn btn-info" value="Process" id="processButton"/>
+                    </div>
                 </div>
             </div>
+            <div class="col">
+                <!--<div class="evaluator">
+                    <h5><span class="badge badge-info">Precision</span>{{precision}}</h5>
+                    <h5><span class="badge badge-info">Fitness</span>{{fitness}}</h5> <br>
+                </div> -->
+                <div class="evaluator">
+                    <h5 style="color:navy; font-weight: bold;">Evaluation Criteria:</h5>
+                    <table class="table" style="margin-top:5%;">
+                        <tbody>
+                            <tr>
+                                <th scope="row"  style="text-align: left;color:#008b8b"> Precision </th>
+                                <td style="text-align: left;">{{precision}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"  style="text-align: left;color:#008b8b"> Fitness </th>
+                                <td>{{fitness}}</td>
+                            </tr>
+                        <tbody>
+                    </table>
+                </div>
+                {% if Rules %}
+                    <div class="dependency-rules">
+                        <h5 style="color:navy; font-weight: bold;">Dependencies:</h5>
+                        <table class="table" style="margin-top:5%;">
+                            <thead>
+                                <tr style="color:#008b8b" >
+                                <th scope="col">Long-Term Dependency Rules</th>
+                                <th scope="col">Support</th>
+                                <th scope="col">Confidence</th>
+                                <th scope="col">Lift</th>
+                                </tr>
+                            </thead>
+                            <tbody> 
+                                {% for k, v in Rules.items() %}
+                                    <tr>
+                                        <th scope="row" style="color:#008b8b">{{k[0]}} &rarr; {{k[1]}}</th>
+                                        <td>{{v[0]}}</td>
+                                        <td>{{v[1]}}</td>
+                                        <td>{{v[2]}}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
         </div>
-        <input name="processButton" type="submit" class="btn btn-primary" value="Process" id="processButton"/>
     </div>
 </form>
-<br>
-<br>
+
 
 {% endblock content %}
 {% block script %}
 <script>
-    $(document).ready(function(){
-        console.log("READY")
+   $(document).ready(function(){
         var rangeSlider = function(){
             var slider = $('.range-slider'),
                 range = $('.range-slider__range'),
@@ -93,7 +179,7 @@
                 });
 
                 range.on('input', function(){
-                $(this).next(value).html(this.value);
+                    $(this).next(value).html(this.value);
                 });
             });
             var support = ($('#support')[0].value);
@@ -102,5 +188,60 @@
         };
         rangeSlider();
     });
+
+    $(".custom-checkbox").on("change", function() {
+        var checkBox = document.getElementById("customCheck1");
+        //console.log(soundCheckbox);
+        console.log(checkBox.value);
+    });
+
+    function download(ext, filename) {
+        if (ext == 'pnml'){
+            var element = document.createElement('a');
+            element.setAttribute('href', '{{image_url}}');
+            element.setAttribute('download', filename);
+        }
+        if (ext == 'svg'){
+            var element = document.createElement('a');
+            element.setAttribute('href', '{{image_url}}');
+            element.setAttribute('download', filename); 
+        }
+        
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+    }
+    document.getElementById("pnml").addEventListener("click", function(){
+        var filename = "{{image_url}}.pnml";
+        download('pnml', filename)   
+    }, false);
+
+    document.getElementById("svg").addEventListener("click", function(){
+        var filename = "{{eventlog_name}}.svg";
+        download('svg', filename)   
+    }, false);
+
+
+/*    function zoomIn(event) {
+  var pre = document.getElementById("preview");
+  pre.style.visibility = "visible";
+  if ($('#zoom1').is(':hover')) {
+        var img = document.getElementById("zoom1");
+		pre.style.backgroundImage = "{{image_url}}";
+    }
+  var posX = event.offsetX;
+  var posY = event.offsetY;
+  pre.style.backgroundPosition=(-posX*2.5)+"px "+(-posY*5.5)+"px";
+
+}
+
+function zoomOut() {
+  var pre = document.getElementById("preview");
+  pre.style.visibility = "hidden";
+} */
 </script>
+
 {% endblock %}

@@ -19,39 +19,6 @@ def init():
     global PROCESS_TREE
     PROCESS_TREE = None
     
-    # global candidates
-    # candidates = {}
-    
-    # global xor_pairs
-    # xor_pairs = []
-    
-    # global parent
-    # parent = []
-    
-    # global count_dict
-    # count_dict = {}
-    
-    # global sup_dict
-    # sup_dict = {}
-    
-    # global conf 
-    # conf = {}
-
-    # global lift
-    # lift = {}
-    
-    # global support
-    # support = {}
-    
-    # global confidence
-    # confidence = {}
-    
-    # global source
-    # source = set()
-    
-    # global target
-    # target = set()
-    
     global PETRI_NET
     global I_MARKS
     global F_MARKS
@@ -66,7 +33,16 @@ def init():
     sink_dict = {}
     src_dict = {}
     
-    global RULES
+    global RULES_DICT
     global XOR_TREES
-    RULES = {}
+    global RULES
+    RULES_DICT = {}
     XOR_TREES = {}
+    RULES = {}
+    
+    global PETRI_NET_ORIG
+    global I_MARKS_ORIG 
+    global F_MARKS_ORIG
+    PETRI_NET_ORIG = {}
+    I_MARKS_ORIG = {}
+    F_MARKS_ORIG = {}

@@ -12,9 +12,10 @@
       <style>
       {% block style %}{% endblock %} </style>
       {% block head %}{% endblock %}
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      
+      <scri src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="container-fluid">
@@ -28,9 +29,7 @@
                     <a href="/processtree">Process Tree</a>
                     <a href="/petrinet">Petri Net</a>
                   </div>
-                </div>
-              
-                
+                </div> 
                 <div class="col-sm-9 main" id="content">
                   {% block content %}{% endblock content %}
                 </div>

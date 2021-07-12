@@ -3,20 +3,20 @@
 {% block title %} Event Log{% endblock title %} 
 
 {% block content %}
-
-
 <form action="/" enctype="multipart/form-data" method="POST">
     <h3 class="mt-4" style="color:#00529F; margin-left:13px">Event Logs</h3>
     <div class="container-fluid mt-4">
         <div class="custom-file mb-3">
+          <fieldset>
           <input type="file" class="custom-file-input" id="customFile" style="width: 100%; margin-left:200px;" name="file">
-          <label class="custom-file-label" for="customFile" style="width: 100%;">Choose file</label>
+          <label class="custom-file-label" for="customFile" style="width: 100%;">Choose Event Log in .XES format</label>
+          </fieldset>
         </div>
           <button type="submit" class="btn btn-primary">Upload</button>
     </div>
 </form>
 <br/>
-<form method = "POST" action="/eventlog-form">
+<form method = "POST" action="/eventlog">
     <div class="container-fluid mt-4">
 
       <select name="list_of_logs" class="custom-select" size="10">
@@ -25,8 +25,8 @@
           {% endfor %}
       </select>
       <input style="margin-top: 10px;" data-toggle="tooltip" data-placement="top" title="Set as the input" type = "submit" class="btn btn-success" value = "Set" name= "action" id ='setButton' />
-      <input style="margin-top: 10px;" type = "submit" class="btn btn-danger" value = "Delete" name="action" id ='deleteButton'/>
-      <input style="float: right; margin-top: 10px;" type = "submit" class="btn btn-info" value = "Download" name= "action" id ='downloadButton'/>
+      <input style="margin-top: 10px; float: right;" type = "submit" class="btn btn-danger" value = "Delete" name="action" id ='deleteButton'/>
+      <!--<input style="float: right; margin-top: 10px;" type = "submit" class="btn btn-info" value = "Download" name= "action" id ='downloadButton'/> -->
     </div>
 </form>
 

@@ -59,11 +59,18 @@ def get_xor_children_copy(node, xor_list=None):
     return xor_list
 
 def check_for_tau(tree):
-    leaves = g.get_leaves(tree)
-    for leaf in leaves:
-        if g.is_tau_leaf(leaf):
-            print("Tau Exists", leaf)
-            return True
+    # leaves = g.get_leaves(tree)
+    # for leaf in leaves:
+    #     if g.is_tau_leaf(leaf):
+    #         print("Tau Exists", leaf)
+    #         return True
+    for node in tree.children:
+        leaves = g.get_leaves(node)
+        if len(leaves) == 1:
+            for leaf in leaves:
+                if g.is_tau_leaf(leaf):
+                    print("Tau Exists")
+                    return True
         
 def get_xor_trees(pt, xor_tree = None):
     xor_tree = xor_tree if xor_tree is not None else {}
@@ -122,3 +129,4 @@ def get_lift(pair, confidence, variants, total):
     sup_c = round((rhs_c / total),3)
     lift = round((confidence / sup_c), 3)
     return lift
+

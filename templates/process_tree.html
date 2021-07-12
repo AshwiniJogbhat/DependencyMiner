@@ -2,14 +2,55 @@
 
 {% block title %} Process Tree {% endblock title %}
 {% block style %}
-.img-fluid{
-    margin-right: 10%;
-    margin-top: 5%;
-    text-align: center
+.img-fluid.center{
+    text-align: center;
+    margin-right: auto;
+    margin-left:auto;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+.container {
+  #border: 3px solid black;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #EBF4FA;
+  margin-top: 10%;
+}
+.table {
+    align: center;
 }
 {% endblock %}
 {% block content %}
-<div>
-    <img src={{image_url}} class="img-fluid" alt="Responsive image">
+<div class="container-fluid" style="text-align:center">
+    <img src={{image_url}} style="float: center;" class="img-fluid" alt="Responsive image">
 </div>
-{% endblock %}
+
+<div class="container">
+<table class="table">
+  <thead>
+    <tr style="color:#000080">
+      <th scope="col">Long-Term Dependency Rules</th>
+      <th scope="col">Support</th>
+      <th scope="col">Confidence</th>
+      <th scope="col">Lift</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for key, values in rules.items() %}
+    {% for k,v in values.items() %}
+        {% if k != 'Max'%}
+            <tr>
+            <th scope="row" style="color:#000080">{{k[0]}} &rarr; {{k[1]}}</th>
+            <td>{{v[0]}}</td>
+            <td>{{v[1]}}</td>
+            <td>{{v[2]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+    {% endfor %}
+</table>
+</div>
+
+
+{% endblock content %}
