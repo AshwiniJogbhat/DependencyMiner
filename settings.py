@@ -13,6 +13,8 @@ def init():
     global NET_PATH
     NET_PATH = "./static/PetriNet/"
     
+    global PNML_PATH 
+    
     global TREE_PATH
     TREE_PATH = "./static/ProcessTrees/"
     
@@ -46,3 +48,8 @@ def init():
     PETRI_NET_ORIG = {}
     I_MARKS_ORIG = {}
     F_MARKS_ORIG = {}
+    
+    global PRECISION
+    global FITNESS
+    PRECISION = None
+    FITNESS = None

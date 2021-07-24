@@ -44,9 +44,14 @@ def set_event_log(log_list):
     net = None
     im = None
     fm = None
-    settings.RULES_DICT = None
+    settings.RULES_DICT = {}
+    settings.RULES = {}
+    settings.PRECISION = None
+    settings.FITNESS = None
     net, im, fm = discover_petri_net(tree)
-    #export_pnml(f"{settings.EVENT_LOG_NAME}_ORIG.pnml")
+    
+    
+    pnml_path = export_pnml(net, im, fm)
     
     # disover rules
     rules_dict = {}

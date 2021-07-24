@@ -130,3 +130,53 @@ def get_lift(pair, confidence, variants, total):
     lift = round((confidence / sup_c), 3)
     return lift
 
+def get_support_updated(pair, variants, total, source, target):
+    lhs_c = 0
+    rule_count = 0
+    l_found = 0
+    r_found = 0
+    sup = {}
+    for item in variants:
+        trace = item['variant'].split(',')
+        for i in range(0, len(trace)):
+            if not trace[i] in repr(pair[0]):
+                continue
+            else:
+                l_found = 1
+                track = 0
+                for j in range(i, len(trace)):
+                    track = j
+                    if trace[j] in repr(pair[1]):
+                        if l_found:
+                            r_found = 1
+                            rule_count += item['count']
+                            i = j
+                            break
+                    else:
+                        if trace[j] in list(str(source)) and trace[j] not in repr(pair[0]):
+                            l_found = 0
+                            break
+                 
+                if track == len(trace) - 1:
+                    break
+
+            if l_found and r_found:
+                break
+                               
+    
+    #sup[tuple(pair[0])] = round((lhs_c / total), 3)
+    sup[tuple(pair[0]), tuple(pair[1])] = round((rule_count / total), 3) 
+    return sup
+
+def get_confidence(pair, sup, variants, total):
+    lhs_c = 0
+    for item in variants:
+        for i in range(0, len(pair[0])):
+            if not repr(pair[0][i]) in item['variant']: 
+                continue
+            else:
+                lhs_c += item['count']
+                break
+    sup_c = round((lhs_c / total),3)
+    conf = round((sup / sup_c), 3)
+    return conf

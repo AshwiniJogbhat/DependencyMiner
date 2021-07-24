@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <page id="n0">
+      <place id="p_9_1627028143.5688753799">
+        <name>
+          <text>p_9_1627028143.5688753799</text>
+        </name>
+      </place>
+      <place id="p_11_1627028143.5688758516">
+        <name>
+          <text>p_11_1627028143.5688758516</text>
+        </name>
+      </place>
+      <place id="p_12_1627028143.5688755078">
+        <name>
+          <text>p_12_1627028143.5688755078</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="pt_[O_Cancelled]">
+        <name>
+          <text>pt_[O_Cancelled]</text>
+        </name>
+      </place>
+      <place id="pt_[O_Refused]">
+        <name>
+          <text>pt_[O_Refused]</text>
+        </name>
+      </place>
+      <place id="p_0_1627028143.5688755059">
+        <name>
+          <text>p_0_1627028143.5688755059</text>
+        </name>
+      </place>
+      <place id="p_0_1627028143.5688751354">
+        <name>
+          <text>p_0_1627028143.5688751354</text>
+        </name>
+      </place>
+      <place id="p_1_1627028143.5688754005">
+        <name>
+          <text>p_1_1627028143.5688754005</text>
+        </name>
+      </place>
+      <place id="p_1_1627028143.568875169">
+        <name>
+          <text>p_1_1627028143.568875169</text>
+        </name>
+      </place>
+      <place id="p_0_1627028143.5688751053">
+        <name>
+          <text>p_0_1627028143.5688751053</text>
+        </name>
+      </place>
+      <place id="p_10_1627028143.5688753015">
+        <name>
+          <text>p_10_1627028143.5688753015</text>
+        </name>
+      </place>
+      <place id="ps_[O_Sent (mail and online)]">
+        <name>
+          <text>ps_[O_Sent (mail and online)]</text>
+        </name>
+      </place>
+      <place id="pt_[O_Accepted]">
+        <name>
+          <text>pt_[O_Accepted]</text>
+        </name>
+      </place>
+      <place id="p_1_1627028143.5688754740">
+        <name>
+          <text>p_1_1627028143.5688754740</text>
+        </name>
+      </place>
+      <place id="p_6_1627028143.5688751684">
+        <name>
+          <text>p_6_1627028143.5688751684</text>
+        </name>
+      </place>
+      <place id="p_7_1627028143.5688757101">
+        <name>
+          <text>p_7_1627028143.5688757101</text>
+        </name>
+      </place>
+      <place id="p_8_1627028143.5688758046">
+        <name>
+          <text>p_8_1627028143.5688758046</text>
+        </name>
+      </place>
+      <place id="p_13_1627028143.5688759698">
+        <name>
+          <text>p_13_1627028143.5688759698</text>
+        </name>
+      </place>
+      <place id="ps_[O_Sent (online only)]">
+        <name>
+          <text>ps_[O_Sent (online only)]</text>
+        </name>
+      </place>
+      <transition id="2503143201280">
+        <name>
+          <text>O_Returned</text>
+        </name>
+      </transition>
+      <transition id="tau_[O_Sent (mail and online)][O_Cancelled]">
+        <name>
+          <text>tau_[O_Sent (mail and online)][O_Cancelled]</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="fd239c30-378d-4c3c-bdf5-b5c1d924e6cc"/>
+      </transition>
+      <transition id="2503143200272">
+        <name>
+          <text>O_Created</text>
+        </name>
+      </transition>
+      <transition id="t_3_1627028143.5688753905">
+        <name>
+          <text>t_3_1627028143.5688753905</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="cf601d12-1588-43af-8f2c-b88ad303609a"/>
+      </transition>
+      <transition id="2503143200800">
+        <name>
+          <text>O_Refused</text>
+        </name>
+      </transition>
+      <transition id="2503143200608">
+        <name>
+          <text>O_Sent (online only)</text>
+        </name>
+      </transition>
+      <transition id="t_2_1627028143.5688756981">
+        <name>
+          <text>t_2_1627028143.5688756981</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="92b38948-4b3f-48ee-a692-83ca48a76be3"/>
+      </transition>
+      <transition id="t_2_1627028143.5688757545">
+        <name>
+          <text>t_2_1627028143.5688757545</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="8214a19b-38ee-448d-af58-5a6d9e508b94"/>
+      </transition>
+      <transition id="2503143201616">
+        <name>
+          <text>O_Accepted</text>
+        </name>
+      </transition>
+      <transition id="t_15_1627028143.5688755930">
+        <name>
+          <text>t_15_1627028143.5688755930</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="a581e195-c8a3-42d4-8820-29d4f22d68b7"/>
+      </transition>
+      <transition id="tau_[O_Sent (online only)][O_Cancelled]">
+        <name>
+          <text>tau_[O_Sent (online only)][O_Cancelled]</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="44d48c6d-4282-4aff-9a52-d1b0f0c711ab"/>
+      </transition>
+      <transition id="t_3_1627028143.5688753497">
+        <name>
+          <text>t_3_1627028143.5688753497</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="3acf2a6e-9d33-4577-aed8-c0072f5e7853"/>
+      </transition>
+      <transition id="t_4_1627028143.568875522">
+        <name>
+          <text>t_4_1627028143.568875522</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="71724e1d-9208-45bb-b7c3-1b3b1eb7237f"/>
+      </transition>
+      <transition id="t_16_1627028143.568875414">
+        <name>
+          <text>t_16_1627028143.568875414</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="b8d44f73-2285-4983-b407-6a913226161a"/>
+      </transition>
+      <transition id="2503143201568">
+        <name>
+          <text>O_Cancelled</text>
+        </name>
+      </transition>
+      <transition id="2503143201040">
+        <name>
+          <text>2503143201040</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="6bda50cd-fae4-4718-8f0e-62a019a3819e"/>
+      </transition>
+      <transition id="tau_[O_Sent (online only)][O_Accepted]">
+        <name>
+          <text>tau_[O_Sent (online only)][O_Accepted]</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="8d39e4ac-af2e-402c-b6b9-544fb0bfed8c"/>
+      </transition>
+      <transition id="2503143200032">
+        <name>
+          <text>O_Create Offer</text>
+        </name>
+      </transition>
+      <transition id="2503143199504">
+        <name>
+          <text>O_Sent (mail and online)</text>
+        </name>
+      </transition>
+      <transition id="t_3_1627028143.5688753313">
+        <name>
+          <text>t_3_1627028143.5688753313</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="a18c1473-7916-4038-ba5f-2e6d12a30b56"/>
+      </transition>
+      <transition id="tau_[O_Sent (mail and online)][O_Refused]">
+        <name>
+          <text>tau_[O_Sent (mail and online)][O_Refused]</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="13d4e438-dcb7-421e-9d51-2452a75a420b"/>
+      </transition>
+      <arc id="2503143900928" source="t_3_1627028143.5688753313" target="p_10_1627028143.5688753015"/>
+      <arc id="2503145315344" source="p_0_1627028143.5688755059" target="2503143199504"/>
+      <arc id="2503143900448" source="p_7_1627028143.5688757101" target="2503143200272"/>
+      <arc id="2503143901984" source="ps_[O_Sent (mail and online)]" target="tau_[O_Sent (mail and online)][O_Refused]"/>
+      <arc id="2503145314096" source="t_2_1627028143.5688756981" target="p_0_1627028143.5688755059"/>
+      <arc id="2503143899440" source="2503143201616" target="p_1_1627028143.5688754740"/>
+      <arc id="2503143901744" source="t_16_1627028143.568875414" target="p_13_1627028143.5688759698"/>
+      <arc id="2503143726144" source="t_2_1627028143.5688757545" target="p_0_1627028143.5688751354"/>
+      <arc id="2503143900736" source="t_3_1627028143.5688753497" target="p_9_1627028143.5688753799"/>
+      <arc id="2503143872064" source="2503143199504" target="ps_[O_Sent (mail and online)]"/>
+      <arc id="2503143902272" source="pt_[O_Refused]" target="2503143200800"/>
+      <arc id="2503143903040" source="tau_[O_Sent (online only)][O_Accepted]" target="pt_[O_Accepted]"/>
+      <arc id="2503145314384" source="2503143200608" target="p_1_1627028143.568875169"/>
+      <arc id="2503143726672" source="2503143201040" target="p_1_1627028143.5688754005"/>
+      <arc id="2503143899728" source="t_3_1627028143.5688753905" target="p_0_1627028143.5688751053"/>
+      <arc id="2503143901264" source="t_15_1627028143.5688755930" target="p_6_1627028143.5688751684"/>
+      <arc id="2503143900256" source="p_6_1627028143.5688751684" target="2503143200032"/>
+      <arc id="2503143901024" source="p_10_1627028143.5688753015" target="t_3_1627028143.5688753905"/>
+      <arc id="2503143899248" source="2503143201568" target="p_1_1627028143.5688754740"/>
+      <arc id="2503145315200" source="p_0_1627028143.5688751354" target="2503143201040"/>
+      <arc id="2503143726720" source="p_1_1627028143.5688754005" target="t_3_1627028143.5688753313"/>
+      <arc id="2503143900544" source="2503143200272" target="p_8_1627028143.5688758046"/>
+      <arc id="2503143902848" source="ps_[O_Sent (online only)]" target="tau_[O_Sent (online only)][O_Accepted]"/>
+      <arc id="2503145314960" source="p_0_1627028143.5688755059" target="2503143200608"/>
+      <arc id="2503143899536" source="p_0_1627028143.5688751053" target="2503143200800"/>
+      <arc id="2503143870864" source="ps_[O_Sent (mail and online)]" target="tau_[O_Sent (mail and online)][O_Cancelled]"/>
+      <arc id="2503143901840" source="pt_[O_Cancelled]" target="2503143201568"/>
+      <arc id="2503143902608" source="ps_[O_Sent (online only)]" target="tau_[O_Sent (online only)][O_Cancelled]"/>
+      <arc id="2503143900832" source="p_9_1627028143.5688753799" target="t_2_1627028143.5688757545"/>
+      <arc id="2503143903136" source="pt_[O_Accepted]" target="2503143201616"/>
+      <arc id="2503143726528" source="2503143201280" target="p_1_1627028143.5688754005"/>
+      <arc id="2503143900352" source="2503143200032" target="p_7_1627028143.5688757101"/>
+      <arc id="2503143901120" source="t_4_1627028143.568875522" target="p_11_1627028143.5688758516"/>
+      <arc id="2503143873984" source="tau_[O_Sent (mail and online)][O_Cancelled]" target="pt_[O_Cancelled]"/>
+      <arc id="2503145315536" source="2503143199504" target="p_1_1627028143.568875169"/>
+      <arc id="2503143899344" source="p_0_1627028143.5688751053" target="2503143201616"/>
+      <arc id="2503143901648" source="p_12_1627028143.5688755078" target="t_15_1627028143.5688755930"/>
+      <arc id="2503143902416" source="tau_[O_Sent (online only)][O_Cancelled]" target="pt_[O_Cancelled]"/>
+      <arc id="2503145315296" source="p_1_1627028143.568875169" target="t_3_1627028143.5688753497"/>
+      <arc id="2503143726048" source="p_0_1627028143.5688751354" target="2503143201280"/>
+      <arc id="2503144678880" source="p_0_1627028143.5688751053" target="2503143201568"/>
+      <arc id="2503143899872" source="p_1_1627028143.5688754740" target="t_4_1627028143.568875522"/>
+      <arc id="2503143900640" source="p_8_1627028143.5688758046" target="t_2_1627028143.5688756981"/>
+      <arc id="2503143901408" source="p_11_1627028143.5688758516" target="t_16_1627028143.568875414"/>
+      <arc id="2503143902176" source="tau_[O_Sent (mail and online)][O_Refused]" target="pt_[O_Refused]"/>
+      <arc id="2503143899632" source="2503143200800" target="p_1_1627028143.5688754740"/>
+      <arc id="2503143902704" source="2503143200608" target="ps_[O_Sent (online only)]"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p_13_1627028143.5688759698">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

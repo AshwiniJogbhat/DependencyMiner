@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <page id="n0">
+      <place id="p_0_1626899829.90315223236">
+        <name>
+          <text>p_0_1626899829.90315223236</text>
+        </name>
+      </place>
+      <place id="p_1_1626899829.90315221485">
+        <name>
+          <text>p_1_1626899829.90315221485</text>
+        </name>
+      </place>
+      <place id="p_1_1626899829.90315229918">
+        <name>
+          <text>p_1_1626899829.90315229918</text>
+        </name>
+      </place>
+      <place id="p_4_1626899829.9041432605">
+        <name>
+          <text>p_4_1626899829.9041432605</text>
+        </name>
+      </place>
+      <place id="p_6_1626899829.9041431840">
+        <name>
+          <text>p_6_1626899829.9041431840</text>
+        </name>
+      </place>
+      <place id="p_8_1626899829.9041438190">
+        <name>
+          <text>p_8_1626899829.9041438190</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="p_0_1626899829.90315227070">
+        <name>
+          <text>p_0_1626899829.90315227070</text>
+        </name>
+      </place>
+      <place id="p_5_1626899829.9041439226">
+        <name>
+          <text>p_5_1626899829.9041439226</text>
+        </name>
+      </place>
+      <place id="p_7_1626899829.9041439435">
+        <name>
+          <text>p_7_1626899829.9041439435</text>
+        </name>
+      </place>
+      <place id="p_9_1626899829.9041439161">
+        <name>
+          <text>p_9_1626899829.9041439161</text>
+        </name>
+      </place>
+      <transition id="t_3_1626899829.90315228280">
+        <name>
+          <text>t_3_1626899829.90315228280</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="c1eec9d6-951d-4245-8045-91989f2157e2"/>
+      </transition>
+      <transition id="2464125809712">
+        <name>
+          <text>B</text>
+        </name>
+      </transition>
+      <transition id="2464125809376">
+        <name>
+          <text>C</text>
+        </name>
+      </transition>
+      <transition id="2464125810240">
+        <name>
+          <text>E</text>
+        </name>
+      </transition>
+      <transition id="2464125810480">
+        <name>
+          <text>D</text>
+        </name>
+      </transition>
+      <transition id="t_3_1626899829.90315221481">
+        <name>
+          <text>t_3_1626899829.90315221481</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="d0f034f4-f98e-485f-bbb2-53af61bc854f"/>
+      </transition>
+      <transition id="t_9_1626899829.904143906">
+        <name>
+          <text>t_9_1626899829.904143906</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="c797e4a8-6f06-4220-b40e-6f105000dfbb"/>
+      </transition>
+      <transition id="2464125811968">
+        <name>
+          <text>A</text>
+        </name>
+      </transition>
+      <transition id="t_2_1626899829.90315226531">
+        <name>
+          <text>t_2_1626899829.90315226531</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="9c4ad437-ffbd-45be-85a9-396e4533bc58"/>
+      </transition>
+      <transition id="t_2_1626899829.90315223529">
+        <name>
+          <text>t_2_1626899829.90315223529</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="f3f1cbd0-dfa8-402f-8fe2-c662e83add32"/>
+      </transition>
+      <transition id="t_10_1626899829.9041439615">
+        <name>
+          <text>t_10_1626899829.9041439615</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="9ff83bb0-fae5-47c8-b4b0-5f516837e9fb"/>
+      </transition>
+      <arc id="2464117441536" source="p_0_1626899829.90315223236" target="2464125811968"/>
+      <arc id="2464126396688" source="2464125811968" target="p_1_1626899829.90315221485"/>
+      <arc id="2464126398224" source="t_3_1626899829.90315228280" target="p_5_1626899829.9041439226"/>
+      <arc id="2464126394768" source="2464125809376" target="p_6_1626899829.9041431840"/>
+      <arc id="2464126395296" source="p_1_1626899829.90315221485" target="t_3_1626899829.90315228280"/>
+      <arc id="2464126394912" source="p_0_1626899829.90315227070" target="2464125810240"/>
+      <arc id="2464127698208" source="t_9_1626899829.904143906" target="p_4_1626899829.9041432605"/>
+      <arc id="2464127697728" source="p_7_1626899829.9041439435" target="t_10_1626899829.9041439615"/>
+      <arc id="2464126398032" source="p_0_1626899829.90315223236" target="2464125809712"/>
+      <arc id="2464126395344" source="t_2_1626899829.90315226531" target="p_0_1626899829.90315223236"/>
+      <arc id="2464126398416" source="t_2_1626899829.90315223529" target="p_0_1626899829.90315227070"/>
+      <arc id="2464126397648" source="p_0_1626899829.90315227070" target="2464125810480"/>
+      <arc id="2464126395728" source="p_1_1626899829.90315229918" target="t_3_1626899829.90315221481"/>
+      <arc id="2464126394960" source="p_5_1626899829.9041439226" target="2464125809376"/>
+      <arc id="2464126396880" source="p_6_1626899829.9041431840" target="t_2_1626899829.90315223529"/>
+      <arc id="2464126395104" source="2464125810480" target="p_1_1626899829.90315229918"/>
+      <arc id="2464126397408" source="p_4_1626899829.9041432605" target="t_2_1626899829.90315226531"/>
+      <arc id="2464127698016" source="t_10_1626899829.9041439615" target="p_9_1626899829.9041439161"/>
+      <arc id="2464127699696" source="t_3_1626899829.90315221481" target="p_7_1626899829.9041439435"/>
+      <arc id="2464126397936" source="2464125809712" target="p_1_1626899829.90315221485"/>
+      <arc id="2464126394480" source="2464125810240" target="p_1_1626899829.90315229918"/>
+      <arc id="2464127700848" source="p_8_1626899829.9041438190" target="t_9_1626899829.904143906"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p_9_1626899829.9041439161">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

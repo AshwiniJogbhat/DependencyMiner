@@ -76,8 +76,10 @@ def construct_xor_pattern(net, sub_nets):
     p_s = pn_util.add_place(net)
     p_o = pn_util.add_place(net)
     for n in sub_nets:
-        settings.src_dict[tuple(n.transitions)] = _get_src_transition(n)
-        settings.sink_dict[tuple(n.transitions)] = _get_sink_transition(n)
+        #settings.src_dict[tuple(n.transitions)] = _get_src_transition(n)
+        #settings.sink_dict[tuple(n.transitions)] = _get_sink_transition(n)
+        settings.src_dict[_get_src_transition(n)] = n.transitions
+        settings.sink_dict[_get_sink_transition(n)] = n.transitions
         pn_util.add_arc_from_to(p_s, _get_src_transition(n), net)
         pn_util.add_arc_from_to(_get_sink_transition(n), p_o, net)
     return _add_src_sink_transitions(net, p_s, p_o)

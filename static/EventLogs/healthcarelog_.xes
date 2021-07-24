@@ -1,0 +1,1545 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<log>
+	<trace>
+		<string key="concept:name" value="0" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="1" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="2" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="3" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="4" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="5" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="6" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="7" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="8" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="9" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="10" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:46" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="11" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="12" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="13" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="15" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="16" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="17" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="18" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="Checkup" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="19" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="20" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="21" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="22" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="23" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="24" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Scanner" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+				<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+		<trace>
+		<string key="concept:name" value="25" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Scanner" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+				<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+		<trace>
+		<string key="concept:name" value="26" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Scanner" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+				<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+		<trace>
+		<string key="concept:name" value="27" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Scanner" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+				<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="28" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Scanner" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+				<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="30" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Scanner" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+				<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="31" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Scanner" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+				<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="32" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Scanner" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+				<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="33" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Scanner" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+				<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="34" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Nurse Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="35" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Nurse Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="36" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Nurse Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="37" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Nurse Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="38" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Nurse Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="39" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Nurse Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="40" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Nurse Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="41" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Nurse Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="42" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Nurse Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="43" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="44" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Doctor Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="45" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Nurse Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="46" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Nurse Exam" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="46" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Discharge" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="46" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Operating Room" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="46" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="MRI" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="46" />
+		<event>
+			<string key="concept:name" value="Admission" />
+			<date key="time:timestamp" value="1970-04-26T19:46:40" />
+		</event>
+		<event>
+			<string key="concept:name" value="Equipment preparation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:41" />
+		</event>
+		<event>
+			<string key="concept:name" value="Scanner" />
+			<date key="time:timestamp" value="1970-04-26T19:46:42" />
+		</event>
+		<event>
+			<string key="concept:name" value="Report edit" />
+			<date key="time:timestamp" value="1970-04-26T19:46:43" />
+		</event>
+		<event>
+			<string key="concept:name" value="Waiting" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Observation" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+		<event>
+			<string key="concept:name" value="Checkup" />
+			<date key="time:timestamp" value="1970-04-26T19:46:44" />
+		</event>
+		<event>
+			<string key="concept:name" value="Complication" />
+			<date key="time:timestamp" value="1970-04-26T19:46:45" />
+		</event>
+	</trace>
+</log>

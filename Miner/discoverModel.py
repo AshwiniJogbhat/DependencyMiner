@@ -24,17 +24,16 @@ from pm4py.objects.petri_net.exporter import exporter as pnml_exporter
 from pm4py.objects.petri_net.importer import importer as pnml_importer
 from pm4py.objects.petri_net.obj import PetriNet, Marking
 
-#from pm4py.objects.petri_net import utils
-# from pm4py.objects.petri import utils
 from pm4py.objects.petri_net.utils import petri_utils as p_utils
 
 from pm4py.statistics.traces.generic.log import case_statistics
 
 def display_process_tree():
-    #tree = inductive_miner.apply_tree(settings.EVENT_LOG, variant=inductive_miner.Variants.IM)
     parameters = {pt_visualizer.Variants.WO_DECORATION.value.Parameters.FORMAT: "SVG"}
     gviz = pt_visualizer.apply(settings.PROCESS_TREE, parameters=parameters)
-    tree_path = os.path.join(settings.TREE_PATH, f"{settings.EVENT_LOG_NAME}.SVG")
+    log_name = settings.EVENT_LOG_NAME
+    log_name = log_name.replace(" ", "")
+    tree_path = os.path.join(settings.TREE_PATH, f"{log_name}.SVG")
     pt_visualizer.save(gviz, tree_path)
     return tree_path
 
@@ -51,7 +50,9 @@ def display_petri_net(net=None):
     fm = settings.F_MARKS_ORIG
     parameters = {pn_visualizer.Variants.WO_DECORATION.value.Parameters.FORMAT: "SVG"}
     gviz = pn_visualizer.apply(net, im, fm, parameters=parameters)
-    image_path = os.path.join(settings.NET_PATH, f"{settings.EVENT_LOG_NAME}.SVG")
+    log_name = settings.EVENT_LOG_NAME
+    log_name = log_name.replace(" ", "")
+    image_path = os.path.join(settings.NET_PATH, f"{log_name}.SVG")
     pn_visualizer.save(gviz, image_path)
     return image_path
 
@@ -72,15 +73,26 @@ def discover_petri_net(tree):
     settings.PETRI_NET = orig_net
     return orig_net, im, fm
 
-def export_pnml(net_name=None):
-    if net_name != None:
-        net_name = net_name
-    else:
-        net_name = f"{settings.EVENT_LOG_NAME}.pnml"
-    im = settings.I_MARKS_ORIG
-    fm = settings.F_MARKS_ORIG
+def export_pnml(precise_net, im, fm, net_name=None):
+    if net_name == None:
+        net_name = f"{settings.EVENT_LOG_NAME}"
+        net_name = net_name.rsplit('.', 1)[0]
+        net_name = net_name+".pnml"
+    
+    settings.PNML_PATH = None
+    # if precise_net == None:
+    #     precise_net = settings.PETRI_NET
+    
+    # if im == None:
+    #     im = settings.I_MARKS_ORIG
+    # if fm == None:
+    #     fm = settings.F_MARKS_ORIG
+    
     pnml_path = os.path.join(settings.NET_PATH, net_name)
-    pnml_exporter.apply(settings.PETRI_NET, im, pnml_path , final_marking=fm)
+    pnml_exporter.apply(precise_net, im, pnml_path)
+    pnml_exporter.apply(precise_net, im, pnml_path , final_marking=fm)
+    settings.PNML_PATH = pnml_path
+    return pnml_path
     
 def findAsociationRules():
     tree = settings.PROCESS_TREE 
@@ -117,8 +129,9 @@ def findAsociationRules():
                 for s in source:
                     for t in target:
                         values = []
-                        support = get_support([s,t], variants_count, total_traces)
-                        conf_value = round((support[tuple(s), tuple(t)]/support[tuple(s)]), 3)
+                        support = get_support_updated([s,t], variants_count, total_traces, source, target)
+                        #conf_value = round((support[tuple(s), tuple(t)]/support[tuple(s)]), 3)
+                        conf_value = get_confidence([s,t], support[tuple(s), tuple(t)], variants_count, total_traces)
                         lift_value = get_lift([s, t], conf_value, variants_count, total_traces)
                         
                         values.append(support[tuple(s), tuple(t)])
@@ -185,11 +198,13 @@ def discover_sound_petrinet(rules_dict, net):
                 source = PetriNet.Place(s_place)
                 net.places.add(source)
                 p_utils.add_arc_from_to(source, tau_t, net)
+                all_src = pair[0][1:-1].split(", ")
                 #print("Sinc Dict", settings.sink_dict)
                 for k,v in settings.sink_dict.items():
-                    if all(elem in str(list(k)) for elem in str(pair[0])):
+                    if all(item in list(map(str,settings.sink_dict[k])) for item in list(all_src)):
+                    #if all(elem in str(list(k)) for elem in str(pair[0])):
                         for t in net.transitions:
-                            if str(t) == str(v):
+                            if str(t) == str(k):
                                 #print("Added arc for source", t)
                                 
                                 p_utils.add_arc_from_to(t, source, net)
@@ -200,11 +215,13 @@ def discover_sound_petrinet(rules_dict, net):
                 target = PetriNet.Place(t_place)
                 net.places.add(target)
                 p_utils.add_arc_from_to(tau_t, target, net)
+                all_tgt = pair[1][1:-1].split(", ")
                 #print("sOURCE Dict", settings.src_dict)
                 for k,v in settings.src_dict.items():
-                    if all(elem in str(list(k)) for elem in str(pair[1])):
+                    if all(item in list(map(str,settings.src_dict[k])) for item in list(all_tgt)):
+                    #if all(elem in str(list(k)) for elem in str(pair[1])):
                         for t in net.transitions:
-                            if str(t) == str(v):
+                            if str(t) == str(k):
                                 #print("Added arc for target", t)
                                 p_utils.add_arc_from_to(target, t, net)
                                 break
@@ -212,13 +229,13 @@ def discover_sound_petrinet(rules_dict, net):
     return net
 
 
-def repair_Model(s_net, rules_dict, support, confidence, lift, sound=1):
+def repair_sound_Model(s_net, rules_dict, support, confidence, lift, sound=1):
     rules = {}
-    #print("Repairing Model")
+
     rules_dict = dict(sorted(rules_dict.items(), key=lambda item: item[1]))
     for pair, value in rules_dict.items():
         trans = None
-        if str(value[2]) < lift or str(value[0]) < support or str(value[1]) < confidence:
+        if str(value[2]) < lift or str(value[0]) < support or str(value[1]) < confidence or str(value[2]) == 1.0:
             tau_t = f"tau_{pair[0]}{pair[1]}"
             for t in s_net.transitions:
                 s_place_valid = 0
@@ -235,6 +252,9 @@ def repair_Model(s_net, rules_dict, support, confidence, lift, sound=1):
                                 s_place_valid = -1
                                 if len(p.out_arcs) == 1:
                                     p_utils.remove_place(s_net, p)
+                                    
+                        if sound == 'on' and len(p.out_arcs) == 1:
+                            rules[pair] = value            
                     target_places =  set([x.target for x in t.out_arcs])   
                     for p in target_places:
                         t_place = f"pt_{pair[1]}"
@@ -271,6 +291,68 @@ def get_fitness(net, im, fm):
     log = settings.EVENT_LOG
     fitness = replay_fitness_evaluator.apply(log, net, im, fm, variant=replay_fitness_evaluator.Variants.ALIGNMENT_BASED)
     return fitness
+
+def repair_unsound_model(net, rules_dict, support, confidence, lift):
+    rules = {}
+    # p_net, im, fm = discover_petri_net(settings.PROCESS_TREE)
+    for pair, value in rules_dict.items():
+        if str(value[2]) > lift and str(value[0]) > support and str(value[1]) > confidence:
+            rules[pair] = value
+            trans_exist = 0
+            #if the place already exists, We do not need to add new places, just use existing ones
+            tau_t = PetriNet.Transition(f"tau_{pair[0]}{pair[1]}", None)
+            for trans in net.transitions:
+                if str(trans) == str(tau_t):
+                    trans_exist = 1
+                    break
+            if(trans_exist == 0):
+                net.transitions.add(tau_t)
+                s_place = f"ps_{pair[0]}"
+                t_place = f"pt_{pair[1]}"
+                source_found = 0
+                target_found = 0
+                for place in net.places:
+                    if place.name == s_place:
+                        source_found = 1
+                        
+                        p_utils.add_arc_from_to(place, tau_t, net)
+
+                    elif place.name == t_place:
+                        target_found = 1
+                        p_utils.add_arc_from_to(tau_t, place, net)
+
+                    if (source_found and target_found):
+                        break
+                
+                ## Handle Source Side
+                # Adding new place after source
+                if (not source_found):
+                    source = PetriNet.Place(s_place)
+                    net.places.add(source)
+                    p_utils.add_arc_from_to(source, tau_t, net)
+                    #print("Sinc Dict", settings.sink_dict)
+                    for k,v in settings.sink_dict.items():
+                        if all(elem in str(list(k)) for elem in str(pair[0])):
+                            for t in net.transitions:
+                                if str(t) == str(v):
+                                    p_utils.add_arc_from_to(t, source, net)
+                                    break
+                            
+                                
+                if (not target_found):
+                    target = PetriNet.Place(t_place)
+                    net.places.add(target)
+                    p_utils.add_arc_from_to(tau_t, target, net)
+                    for k,v in settings.src_dict.items():
+                        if all(elem in str(list(k)) for elem in str(pair[1])):
+                            for t in net.transitions:
+                                if str(t) == str(v):
+                                    #print("Added arc for target", t)
+                                    p_utils.add_arc_from_to(target, t, net)
+                                    break
+                    
+    return net, rules
+        
     
     
 def repair_petri_net(support, confidence, lift, sound):
@@ -278,44 +360,71 @@ def repair_petri_net(support, confidence, lift, sound):
     p_net = None
     im = None
     fm = None
+    repaired_net = None
+    sound_net = None
+    
     p_net, im, fm = discover_petri_net(settings.PROCESS_TREE)
 
     rules_dict = dict(settings.RULES_DICT)
-       
+    
     if sound == 'on':
         print("we need sound model") 
         rules_dict_sound = soundness_at_XOR_tree(rules_dict)
-        print(rules_dict_sound)
+        print("Rules Dict", rules_dict_sound)
     else:
         print("we do not need sound model") 
         rules_dict_sound = rules_dict
-        print(rules_dict_sound)
-        
+    
+    repair_net = 1
+    
     rules_dicti = {}
     if rules_dict_sound != {}:
         for pair, value in rules_dict_sound.items():
             rules_dicti.update(value)
+        
+        if sound == 'on':
+            maxi = list()
+            for key, value in rules_dict_sound.items():
+                for k, v in value.items():
+                    if k == 'Max':
+                        maxi.append(v)
+                
+            if max(maxi) < float(lift):
+                repair_net = 0
+                settings.RULES = {}
+                
         del rules_dicti['Max']
+    
+    if repair_net:
+        repaired_net = None
+        if sound == 'on':
+            sound_net = discover_sound_petrinet(rules_dicti, p_net)
+            repaired_net, rules = repair_sound_Model(sound_net, rules_dicti, support, confidence, lift, sound)
+            check_soundness(repaired_net, im, fm)
+        else:
+            repaired_net, rules = repair_unsound_model(p_net, rules_dicti, support, confidence, lift)
+        
 
     # Repair net,
     # firstly try adding all arcs and secondly remove those which does not meet the threshold.
-    sound_net = discover_sound_petrinet(rules_dicti, p_net)
-    repaired_net, rules = repair_Model(sound_net, rules_dicti, support, confidence, lift, sound)
+    #sound_net = discover_sound_petrinet(rules_dicti, p_net)
+    #repaired_net, rules = repair_Model(sound_net, rules_dicti, support, confidence, lift, sound)
     
-    settings.PETRI_NET = None
-    settings.PETRI_NET = repaired_net
-    settings.RULES = rules
-    
+        settings.PETRI_NET = None
+        settings.PETRI_NET = repaired_net
+        settings.RULES = rules
+        
     precision = get_precision(settings.PETRI_NET ,im, fm)
     fitness = get_fitness(settings.PETRI_NET, im, fm)
-    net_path = display_petri_net(settings.PETRI_NET)
     
-    if sound == 'on':
-        check_soundness(settings.PETRI_NET, im, fm)
-        
-    print(im, fm)
-    print("Precision after", precision)
-    return net_path, round(precision,2), round(fitness['average_trace_fitness'], 2), rules
+
+    net_path = display_petri_net(settings.PETRI_NET)
+    pnml_path = export_pnml(settings.PETRI_NET, im,fm)
+    
+    # if sound == 'on':
+    #     check_soundness(settings.PETRI_NET, im, fm)
+
+    return net_path, round(precision,2), round(fitness['average_trace_fitness'], 2), settings.RULES, pnml_path
  
     
     

@@ -1,0 +1,377 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <page id="n0">
+      <place id="p_0_1626988904.01462536779">
+        <name>
+          <text>p_0_1626988904.01462536779</text>
+        </name>
+      </place>
+      <place id="p_1_1626988904.01462533839">
+        <name>
+          <text>p_1_1626988904.01462533839</text>
+        </name>
+      </place>
+      <place id="p_2_1626988904.01462537919">
+        <name>
+          <text>p_2_1626988904.01462537919</text>
+        </name>
+      </place>
+      <place id="p_5_1626988904.01462533054">
+        <name>
+          <text>p_5_1626988904.01462533054</text>
+        </name>
+      </place>
+      <place id="p_13_1626988904.01565582573">
+        <name>
+          <text>p_13_1626988904.01565582573</text>
+        </name>
+      </place>
+      <place id="p_15_1626988904.01565584768">
+        <name>
+          <text>p_15_1626988904.01565584768</text>
+        </name>
+      </place>
+      <place id="p_20_1626988904.01565589857">
+        <name>
+          <text>p_20_1626988904.01565589857</text>
+        </name>
+      </place>
+      <place id="p_0_1626988904.01565585913">
+        <name>
+          <text>p_0_1626988904.01565585913</text>
+        </name>
+      </place>
+      <place id="p_1_1626988904.01565582228">
+        <name>
+          <text>p_1_1626988904.01565582228</text>
+        </name>
+      </place>
+      <place id="p_4_1626988904.01462538627">
+        <name>
+          <text>p_4_1626988904.01462538627</text>
+        </name>
+      </place>
+      <place id="p_12_1626988904.01565584039">
+        <name>
+          <text>p_12_1626988904.01565584039</text>
+        </name>
+      </place>
+      <place id="p_18_1626988904.01565582443">
+        <name>
+          <text>p_18_1626988904.01565582443</text>
+        </name>
+      </place>
+      <place id="p_19_1626988904.015655852">
+        <name>
+          <text>p_19_1626988904.015655852</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="pt_[Operating Room]">
+        <name>
+          <text>pt_[Operating Room]</text>
+        </name>
+      </place>
+      <place id="pt_[Discharge]">
+        <name>
+          <text>pt_[Discharge]</text>
+        </name>
+      </place>
+      <place id="p_6_1626988904.01462535759">
+        <name>
+          <text>p_6_1626988904.01462535759</text>
+        </name>
+      </place>
+      <place id="p_3_1626988904.01462538821">
+        <name>
+          <text>p_3_1626988904.01462538821</text>
+        </name>
+      </place>
+      <place id="p_7_1626988904.01462538489">
+        <name>
+          <text>p_7_1626988904.01462538489</text>
+        </name>
+      </place>
+      <place id="p_17_1626988904.01565589630">
+        <name>
+          <text>p_17_1626988904.01565589630</text>
+        </name>
+      </place>
+      <place id="ps_[Doctor Exam]">
+        <name>
+          <text>ps_[Doctor Exam]</text>
+        </name>
+      </place>
+      <place id="ps_[Equipment preparation, MRI, Scanner, Report edit]">
+        <name>
+          <text>ps_[Equipment preparation, MRI, Scanner, Report edit]</text>
+        </name>
+      </place>
+      <place id="ps_[Observation]">
+        <name>
+          <text>ps_[Observation]</text>
+        </name>
+      </place>
+      <place id="p_0_1626988904.01462534120">
+        <name>
+          <text>p_0_1626988904.01462534120</text>
+        </name>
+      </place>
+      <place id="p_1_1626988904.01462532853">
+        <name>
+          <text>p_1_1626988904.01462532853</text>
+        </name>
+      </place>
+      <place id="p_16_1626988904.01565585243">
+        <name>
+          <text>p_16_1626988904.01565585243</text>
+        </name>
+      </place>
+      <place id="p_14_1626988904.01565584141">
+        <name>
+          <text>p_14_1626988904.01565584141</text>
+        </name>
+      </place>
+      <place id="pt_[Observation]">
+        <name>
+          <text>pt_[Observation]</text>
+        </name>
+      </place>
+      <transition id="2790951907776">
+        <name>
+          <text>Admission</text>
+        </name>
+      </transition>
+      <transition id="2790951908496">
+        <name>
+          <text>Equipment preparation</text>
+        </name>
+      </transition>
+      <transition id="2790951908880">
+        <name>
+          <text>MRI</text>
+        </name>
+      </transition>
+      <transition id="2790951908784">
+        <name>
+          <text>Report edit</text>
+        </name>
+      </transition>
+      <transition id="t_11_1626988904.01462539217">
+        <name>
+          <text>t_11_1626988904.01462539217</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="5dc874a3-e15a-425a-bbec-495cf8dd628e"/>
+      </transition>
+      <transition id="t_2_1626988904.0146253721">
+        <name>
+          <text>t_2_1626988904.0146253721</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="8da93e17-c4c4-4c06-8a87-4a26dafb284c"/>
+      </transition>
+      <transition id="2790951909696">
+        <name>
+          <text>Observation</text>
+        </name>
+      </transition>
+      <transition id="t_3_1626988904.01565589628">
+        <name>
+          <text>t_3_1626988904.01565589628</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="a3e87c2d-e65f-4daf-9b60-0ebcacb25ed2"/>
+      </transition>
+      <transition id="t_23_1626988904.01565587075">
+        <name>
+          <text>t_23_1626988904.01565587075</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="5347648c-f6be-44e4-be4e-448feba4eadd"/>
+      </transition>
+      <transition id="tau_[Observation][Discharge]">
+        <name>
+          <text>tau_[Observation][Discharge]</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="8f7f78a2-12d7-429c-a5a0-751637c51c89"/>
+      </transition>
+      <transition id="2790951909264">
+        <name>
+          <text>Nurse Exam</text>
+        </name>
+      </transition>
+      <transition id="t_3_1626988904.01462537565">
+        <name>
+          <text>t_3_1626988904.01462537565</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="28d2c5e6-ae04-4ee9-bedc-7b887b7a25c1"/>
+      </transition>
+      <transition id="2790951909600">
+        <name>
+          <text>Checkup</text>
+        </name>
+      </transition>
+      <transition id="t_24_1626988904.01565584419">
+        <name>
+          <text>t_24_1626988904.01565584419</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="4a51b870-d0c5-44bd-bafa-0f08eb187a3f"/>
+      </transition>
+      <transition id="tau_[Doctor Exam][Operating Room]">
+        <name>
+          <text>tau_[Doctor Exam][Operating Room]</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="b7a81fab-d0d1-4c03-ae79-d274632783a4"/>
+      </transition>
+      <transition id="tau_[Equipment preparation, MRI, Scanner, Report edit][Discharge]">
+        <name>
+          <text>tau_[Equipment preparation, MRI, Scanner, Report edit][Discharge]</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="419c3ba8-bebf-4d87-b247-c77924a567bc"/>
+      </transition>
+      <transition id="t_2_1626988904.0146253135">
+        <name>
+          <text>t_2_1626988904.0146253135</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="c9a26e16-73b0-4ba3-b276-8ab26105d9be"/>
+      </transition>
+      <transition id="2790951909120">
+        <name>
+          <text>Scanner</text>
+        </name>
+      </transition>
+      <transition id="t_6_1626988904.0146253316">
+        <name>
+          <text>t_6_1626988904.0146253316</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="9066f31d-014f-4431-b23c-229c71e6b0f8"/>
+      </transition>
+      <transition id="2790951910272">
+        <name>
+          <text>Discharge</text>
+        </name>
+      </transition>
+      <transition id="tau_[Equipment preparation, MRI, Scanner, Report edit][Observation]">
+        <name>
+          <text>tau_[Equipment preparation, MRI, Scanner, Report edit][Observation]</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="c2d6ee8e-5de8-4635-986b-0e1e16a548ce"/>
+      </transition>
+      <transition id="2790951908448">
+        <name>
+          <text>Doctor Exam</text>
+        </name>
+      </transition>
+      <transition id="t_3_1626988904.01462532809">
+        <name>
+          <text>t_3_1626988904.01462532809</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="3d4ca07d-dab6-4918-b506-182335cafe4b"/>
+      </transition>
+      <transition id="t_7_1626988904.01462537346">
+        <name>
+          <text>t_7_1626988904.01462537346</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="98cc9662-4082-4c8f-b7ab-69a8d990e85b"/>
+      </transition>
+      <transition id="t_10_1626988904.01462532462">
+        <name>
+          <text>t_10_1626988904.01462532462</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="5d01feba-75ee-46c4-866f-3d9926474820"/>
+      </transition>
+      <transition id="2790951907968">
+        <name>
+          <text>Waiting</text>
+        </name>
+      </transition>
+      <transition id="2790951909936">
+        <name>
+          <text>Operating Room</text>
+        </name>
+      </transition>
+      <transition id="2790951910512">
+        <name>
+          <text>Complication</text>
+        </name>
+      </transition>
+      <transition id="t_2_1626988904.0156558210">
+        <name>
+          <text>t_2_1626988904.0156558210</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="2bdefecd-aac5-4dde-9ac4-5cbe4a07f028"/>
+      </transition>
+      <arc id="2790962627584" source="p_14_1626988904.01565584141" target="2790951907968"/>
+      <arc id="2790962629888" source="tau_[Equipment preparation, MRI, Scanner, Report edit][Discharge]" target="pt_[Discharge]"/>
+      <arc id="2790961708816" source="t_2_1626988904.0146253135" target="p_0_1626988904.01462536779"/>
+      <arc id="2790962630416" source="2790951909696" target="ps_[Observation]"/>
+      <arc id="2790961607200" source="p_3_1626988904.01462538821" target="t_2_1626988904.0146253135"/>
+      <arc id="2790961607968" source="p_6_1626988904.01462535759" target="2790951909264"/>
+      <arc id="2790961610272" source="p_0_1626988904.01565585913" target="2790951910272"/>
+      <arc id="2790962627872" source="t_3_1626988904.01462537565" target="p_16_1626988904.01565585243"/>
+      <arc id="2790961608736" source="pt_[Operating Room]" target="2790951909936"/>
+      <arc id="2790961608496" source="p_7_1626988904.01462538489" target="t_11_1626988904.01462539217"/>
+      <arc id="2790961609264" source="p_0_1626988904.01462534120" target="2790951909696"/>
+      <arc id="2790962628400" source="t_23_1626988904.01565587075" target="p_12_1626988904.01565584039"/>
+      <arc id="2790962629168" source="ps_[Equipment preparation, MRI, Scanner, Report edit]" target="tau_[Equipment preparation, MRI, Scanner, Report edit][Observation]"/>
+      <arc id="2790961607488" source="2790951908784" target="p_5_1626988904.01462533054"/>
+      <arc id="2790961608256" source="t_7_1626988904.01462537346" target="p_7_1626988904.01462538489"/>
+      <arc id="2790961610560" source="2790951910512" target="p_1_1626988904.01565582228"/>
+      <arc id="2790962627392" source="p_13_1626988904.01565582573" target="t_10_1626988904.01462532462"/>
+      <arc id="2790962628160" source="p_17_1626988904.01565589630" target="t_2_1626988904.0156558210"/>
+      <arc id="2790962628928" source="t_24_1626988904.01565584419" target="p_20_1626988904.01565589857"/>
+      <arc id="2790962629696" source="ps_[Equipment preparation, MRI, Scanner, Report edit]" target="tau_[Equipment preparation, MRI, Scanner, Report edit][Discharge]"/>
+      <arc id="2790961708624" source="p_0_1626988904.01462536779" target="2790951909120"/>
+      <arc id="2790962629456" source="tau_[Equipment preparation, MRI, Scanner, Report edit][Observation]" target="pt_[Observation]"/>
+      <arc id="2790961607008" source="p_2_1626988904.01462537919" target="2790951908496"/>
+      <arc id="2790961607776" source="p_5_1626988904.01462533054" target="t_7_1626988904.01462537346"/>
+      <arc id="2790962627680" source="2790951907968" target="p_15_1626988904.01565584768"/>
+      <arc id="2790962629984" source="pt_[Discharge]" target="2790951910272"/>
+      <arc id="2790961609072" source="p_0_1626988904.01462534120" target="2790951909936"/>
+      <arc id="2790962626672" source="p_1_1626988904.01565582228" target="t_3_1626988904.01565589628"/>
+      <arc id="2790961707376" source="2790951908448" target="ps_[Doctor Exam]"/>
+      <arc id="2790961607296" source="t_3_1626988904.01462532809" target="p_4_1626988904.01462538627"/>
+      <arc id="2790961608064" source="2790951909264" target="p_7_1626988904.01462538489"/>
+      <arc id="2790961609600" source="p_1_1626988904.01462532853" target="t_3_1626988904.01462537565"/>
+      <arc id="2790961610368" source="2790951910272" target="p_1_1626988904.01565582228"/>
+      <arc id="2790962627200" source="p_12_1626988904.01565584039" target="2790951907776"/>
+      <arc id="2790962627968" source="p_16_1626988904.01565585243" target="2790951909600"/>
+      <arc id="2790961708432" source="p_0_1626988904.01462536779" target="2790951908880"/>
+      <arc id="2790961609360" source="2790951909696" target="p_1_1626988904.01462532853"/>
+      <arc id="2790962629264" source="t_7_1626988904.01462537346" target="ps_[Equipment preparation, MRI, Scanner, Report edit]"/>
+      <arc id="2790961610656" source="t_2_1626988904.0156558210" target="p_0_1626988904.01565585913"/>
+      <arc id="2790961708960" source="p_1_1626988904.01462533839" target="t_3_1626988904.01462532809"/>
+      <arc id="2790961608352" source="t_10_1626988904.01462532462" target="p_6_1626988904.01462535759"/>
+      <arc id="2790962627488" source="t_11_1626988904.01462539217" target="p_14_1626988904.01565584141"/>
+      <arc id="2790962628256" source="t_3_1626988904.01565589628" target="p_18_1626988904.01565582443"/>
+      <arc id="2790961708720" source="2790951909120" target="p_1_1626988904.01462533839"/>
+      <arc id="2790962629552" source="pt_[Observation]" target="2790951909696"/>
+      <arc id="2790962630320" source="ps_[Observation]" target="tau_[Observation][Discharge]"/>
+      <arc id="2790961607104" source="2790951908496" target="p_3_1626988904.01462538821"/>
+      <arc id="2790961607872" source="2790951908448" target="p_7_1626988904.01462538489"/>
+      <arc id="2790962627776" source="p_15_1626988904.01565584768" target="t_2_1626988904.0146253721"/>
+      <arc id="2790962628544" source="p_18_1626988904.01565582443" target="t_24_1626988904.01565584419"/>
+      <arc id="2790961608640" source="tau_[Doctor Exam][Operating Room]" target="pt_[Operating Room]"/>
+      <arc id="2790961607632" source="t_6_1626988904.0146253316" target="p_2_1626988904.01462537919"/>
+      <arc id="2790961609168" source="2790951909936" target="p_1_1626988904.01462532853"/>
+      <arc id="2790961610464" source="p_0_1626988904.01565585913" target="2790951910512"/>
+      <arc id="2790961607392" source="p_4_1626988904.01462538627" target="2790951908784"/>
+      <arc id="2790961706464" source="p_6_1626988904.01462535759" target="2790951908448"/>
+      <arc id="2790961608160" source="p_6_1626988904.01462535759" target="t_6_1626988904.0146253316"/>
+      <arc id="2790962627296" source="2790951907776" target="p_13_1626988904.01565582573"/>
+      <arc id="2790962628064" source="2790951909600" target="p_17_1626988904.01565589630"/>
+      <arc id="2790962628832" source="p_19_1626988904.015655852" target="t_23_1626988904.01565587075"/>
+      <arc id="2790961708000" source="ps_[Doctor Exam]" target="tau_[Doctor Exam][Operating Room]"/>
+      <arc id="2790961708528" source="2790951908880" target="p_1_1626988904.01462533839"/>
+      <arc id="2790961609456" source="t_2_1626988904.0146253721" target="p_0_1626988904.01462534120"/>
+      <arc id="2790962630128" source="tau_[Observation][Discharge]" target="pt_[Discharge]"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p_20_1626988904.01565589857">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

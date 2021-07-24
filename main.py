@@ -4,16 +4,12 @@ from fastapi.responses import RedirectResponse
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-# from starlette.responses import RedirectResponse
 from wsgiref.util import FileWrapper
 
 
 import os
-
-
 import settings
 from Miner.eventLog import *
-#from Miner.disocvery import import_event_log, to_Petrinet, to_Processtree, discover_dependency_values
 from Miner.discoverModel import *
 
 settings.init()
@@ -68,27 +64,36 @@ async def discover_tree(request:Request):
     #settings.RULES_DICT = copy.deepcopy(rules_dicts)
     #settings.XOR_TREES = copy.deepcopy(xor_tree)
     
-    return templates.TemplateResponse('process_tree.html', {"request": request, 'image_url': process_tree_path, 'rules': settings.RULES_DICT, 'xor_tree': settings.XOR_TREES})
+    return templates.TemplateResponse('process_tree.html', {"request": request, 'image_url': process_tree_path, 'rules': settings.RULES_DICT, 'xor_tree': settings.XOR_TREES, 'eventlog_name':settings.EVENT_LOG_NAME})
 
 
 ####### Petri Net Page ###############
 @app.get("/petrinet")
 async def discover_net(request: Request):
     net_path = display_petri_net()
-    fitness = get_fitness(settings.PETRI_NET, settings.I_MARKS_ORIG, settings.F_MARKS_ORIG)
-    precision = get_precision(settings.PETRI_NET, settings.I_MARKS_ORIG, settings.F_MARKS_ORIG)
+    if settings.PRECISION == None: 
+        fitness = get_fitness(settings.PETRI_NET, settings.I_MARKS_ORIG, settings.F_MARKS_ORIG)
+        precision = get_precision(settings.PETRI_NET, settings.I_MARKS_ORIG, settings.F_MARKS_ORIG)
+        settings.PRECISION = precision
+        settings.FITNESS = fitness['average_trace_fitness']
+    
+    
     # rules_dict = {}
     # xor_tree = []
     #rules_dicts, xor_tree = findAsociationRules()
     #settings.RULES_DICT = rules_dicts
     #settings.XOR_TREES = xor_tree
-    pnml_path = export_pnml()
-    return templates.TemplateResponse('petrinet.html', {"request": request, 'image_url': net_path, 'pnml_path': pnml_path, 'eventlog_name':settings.EVENT_LOG_NAME, 'rules':settings.RULES_DICT, 'fitness': round(fitness['average_trace_fitness'], 2), 'precision':round(precision,2), 'xor_trees':settings.XOR_TREES, 'Rules': settings.RULES})
+    # pnml_path = export_pnml()
+    
+    return templates.TemplateResponse('petrinet.html', {"request": request, 'image_url': net_path, 'pnml_path': settings.PNML_PATH, 'eventlog_name':settings.EVENT_LOG_NAME, 'rules':settings.RULES_DICT, 'fitness': round(settings.FITNESS, 2), 'precision':round(settings.PRECISION,2), 'xor_trees':settings.XOR_TREES, 'Rules': settings.RULES})
     
 @app.post("/petrinet")
 async def process_net(request:Request, support: str = Form(default=None), confidence: str = Form(default=None), lift: str = Form(default=None), soundCheckbox: str = Form(default=None)):
-    net_path, precision, fitness, rules = repair_petri_net(support, confidence, lift, soundCheckbox)
-    return templates.TemplateResponse('petrinet.html', {'request': request, 'eventlog_name':settings.EVENT_LOG_NAME, 'rules':settings.RULES_DICT, 'support':support, 'confidence':confidence, 'soundCheckbox':soundCheckbox, 'lift':lift, 'image_url': net_path, 'fitness':fitness, 'precision':precision, 'Rules': rules})
+    net_path, precision, fitness, rules, pnml_path = repair_petri_net(support, confidence, lift, soundCheckbox)
+    settings.PNML_PATH = pnml_path
+    settings.PRECISION = precision
+    settings.FITNESS = fitness
+    return templates.TemplateResponse('petrinet.html', {'request': request, 'eventlog_name':settings.EVENT_LOG_NAME, 'rules':settings.RULES_DICT, 'support':support, 'confidence':confidence, 'soundCheckbox':soundCheckbox, 'lift':lift, 'image_url': net_path, 'fitness':fitness, 'precision':precision, 'Rules': rules, 'pnml_path':pnml_path})
     
     
 
