@@ -77,7 +77,6 @@ def get_xor_trees(pt, xor_tree = None):
     if pt.operator != None:
         for node in pt.children:
             if node.operator != None and node.operator == pt_op.XOR and not check_for_tau(node):
-                
                 xor_tree[f'X{len(xor_tree)+1}'] = node
             else:
                 xor_tree = get_xor_trees(node, xor_tree)
@@ -137,23 +136,27 @@ def get_support_updated(pair, variants, total, source, target):
     r_found = 0
     sup = {}
     for item in variants:
-        trace = item['variant'].split(',')
+        trace = item['variant'].split(",")
+        #added line
+        temp_src = [str(i) for i in pair[0]]
+        temp_tgt = [str(i) for i in pair[1]]
+        
         for i in range(0, len(trace)):
-            if not trace[i] in repr(pair[0]):
+            if not str(trace[i]) in temp_src:#repr(pair[0]):
                 continue
             else:
                 l_found = 1
                 track = 0
                 for j in range(i, len(trace)):
                     track = j
-                    if trace[j] in repr(pair[1]):
+                    if str(trace[j]) in temp_tgt:#repr(pair[1]):
                         if l_found:
                             r_found = 1
                             rule_count += item['count']
                             i = j
                             break
                     else:
-                        if trace[j] in list(str(source)) and trace[j] not in repr(pair[0]):
+                        if str(trace[j]) in list(str(source)) and str(trace[j]) not in temp_src: #repr(pair[0]):
                             l_found = 0
                             break
                  
@@ -171,8 +174,9 @@ def get_support_updated(pair, variants, total, source, target):
 def get_confidence(pair, sup, variants, total):
     lhs_c = 0
     for item in variants:
+        trace = item['variant'].split(",")
         for i in range(0, len(pair[0])):
-            if not repr(pair[0][i]) in item['variant']: 
+            if not repr(pair[0][i]) in trace:#item['variant']: 
                 continue
             else:
                 lhs_c += item['count']

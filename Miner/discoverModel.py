@@ -145,6 +145,7 @@ def findAsociationRules():
                 rule_dicti[(f"X{i}", f"X{j}")] = rules_values
     
     sorted_rule_dict = dict(sorted(rule_dicti.items(), key=lambda item: item[1]['Max'], reverse=True))
+    print("sorted_rule_dict", sorted_rule_dict)
     return sorted_rule_dict, xor_tree
 
 def soundness_at_XOR_tree(rules):
@@ -231,11 +232,13 @@ def discover_sound_petrinet(rules_dict, net):
 
 def repair_sound_Model(s_net, rules_dict, support, confidence, lift, sound=1):
     rules = {}
+    
+    rules_dict = dict(sorted(rules_dict.items(), key=lambda item: item[1][2]))
+    print("rules_dict", rules_dict)
 
-    rules_dict = dict(sorted(rules_dict.items(), key=lambda item: item[1]))
     for pair, value in rules_dict.items():
         trans = None
-        if str(value[2]) < lift or str(value[0]) < support or str(value[1]) < confidence or str(value[2]) == 1.0:
+        if value[2] < 1.001 or str(value[2]) < lift or str(value[0]) < support or str(value[1]) < confidence:
             tau_t = f"tau_{pair[0]}{pair[1]}"
             for t in s_net.transitions:
                 s_place_valid = 0
@@ -296,7 +299,7 @@ def repair_unsound_model(net, rules_dict, support, confidence, lift):
     rules = {}
     # p_net, im, fm = discover_petri_net(settings.PROCESS_TREE)
     for pair, value in rules_dict.items():
-        if str(value[2]) > lift and str(value[0]) > support and str(value[1]) > confidence:
+        if str(value[2]) > lift and str(value[0]) > support and str(value[1]) > confidence and value[2] > 1.001:
             rules[pair] = value
             trans_exist = 0
             #if the place already exists, We do not need to add new places, just use existing ones
@@ -330,11 +333,13 @@ def repair_unsound_model(net, rules_dict, support, confidence, lift):
                     source = PetriNet.Place(s_place)
                     net.places.add(source)
                     p_utils.add_arc_from_to(source, tau_t, net)
+                    all_src = pair[0][1:-1].split(", ")
                     #print("Sinc Dict", settings.sink_dict)
                     for k,v in settings.sink_dict.items():
-                        if all(elem in str(list(k)) for elem in str(pair[0])):
+                        #if all(elem in str(list(k)) for elem in str(pair[0])):
+                        if all(item in list(map(str,settings.sink_dict[k])) for item in list(all_src)):
                             for t in net.transitions:
-                                if str(t) == str(v):
+                                if str(t) == str(k):
                                     p_utils.add_arc_from_to(t, source, net)
                                     break
                             
@@ -343,10 +348,12 @@ def repair_unsound_model(net, rules_dict, support, confidence, lift):
                     target = PetriNet.Place(t_place)
                     net.places.add(target)
                     p_utils.add_arc_from_to(tau_t, target, net)
+                    all_tgt = pair[1][1:-1].split(", ")
                     for k,v in settings.src_dict.items():
-                        if all(elem in str(list(k)) for elem in str(pair[1])):
+                        if all(item in list(map(str,settings.src_dict[k])) for item in list(all_tgt)):
+                        #if all(elem in str(list(k)) for elem in str(pair[1])):
                             for t in net.transitions:
-                                if str(t) == str(v):
+                                if str(t) == str(k):
                                     #print("Added arc for target", t)
                                     p_utils.add_arc_from_to(target, t, net)
                                     break
