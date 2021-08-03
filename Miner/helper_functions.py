@@ -69,7 +69,6 @@ def check_for_tau(tree):
         if len(leaves) == 1:
             for leaf in leaves:
                 if g.is_tau_leaf(leaf):
-                    print("Tau Exists")
                     return True
         
 def get_xor_trees(pt, xor_tree = None):

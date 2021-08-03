@@ -33,12 +33,6 @@ async def eventLog(request: Request):
     eventLogs = get_event_log()
     return templates.TemplateResponse("eventlog.html", {"request": request, 'list_of_eventlogs': eventLogs, 'eventlog_name':settings.EVENT_LOG_NAME, 'log_attributes': log_attributes, 'log':settings.EVENT_LOG})
 
-# @app.get("/eventlog", response_class=HTMLResponse)
-# async def eventLog(request: Request):
-#     eventLogs = get_event_log()
-#     return templates.TemplateResponse("eventlog.html", {"request": request, 'list_of_eventlogs': eventLogs, 'eventlog_name':settings.EVENT_LOG_NAME, 'log_attributes':log_attributes})
-
-
 @app.post("/", response_class=HTMLResponse)
 async def upload_log(request: Request, file: UploadFile = File(...)):
     eventlogs = upload_event_log(file)
@@ -60,9 +54,6 @@ async def form_data(request: Request, list_of_logs: str = Form(default=None), ac
 @app.get("/processtree")
 async def discover_tree(request:Request):
     process_tree_path = display_process_tree()
-    #rules_dicts, xor_tree = findAsociationRules()
-    #settings.RULES_DICT = copy.deepcopy(rules_dicts)
-    #settings.XOR_TREES = copy.deepcopy(xor_tree)
     
     return templates.TemplateResponse('process_tree.html', {"request": request, 'image_url': process_tree_path, 'rules': settings.RULES_DICT, 'xor_tree': settings.XOR_TREES, 'eventlog_name':settings.EVENT_LOG_NAME})
 
@@ -76,15 +67,6 @@ async def discover_net(request: Request):
         precision = get_precision(settings.PETRI_NET, settings.I_MARKS_ORIG, settings.F_MARKS_ORIG)
         settings.PRECISION = precision
         settings.FITNESS = fitness['average_trace_fitness']
-    
-    
-    # rules_dict = {}
-    # xor_tree = []
-    #rules_dicts, xor_tree = findAsociationRules()
-    #settings.RULES_DICT = rules_dicts
-    #settings.XOR_TREES = xor_tree
-    # pnml_path = export_pnml()
-    
     return templates.TemplateResponse('petrinet.html', {"request": request, 'image_url': net_path, 'pnml_path': settings.PNML_PATH, 'eventlog_name':settings.EVENT_LOG_NAME, 'rules':settings.RULES_DICT, 'fitness': round(settings.FITNESS, 2), 'precision':round(settings.PRECISION,2), 'xor_trees':settings.XOR_TREES, 'Rules': settings.RULES})
     
 @app.post("/petrinet")

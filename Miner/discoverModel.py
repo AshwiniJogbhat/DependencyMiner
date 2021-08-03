@@ -375,11 +375,11 @@ def repair_petri_net(support, confidence, lift, sound):
     rules_dict = dict(settings.RULES_DICT)
     
     if sound == 'on':
-        print("we need sound model") 
+        print("Sound Model Requirement is On") 
         rules_dict_sound = soundness_at_XOR_tree(rules_dict)
         print("Rules Dict", rules_dict_sound)
     else:
-        print("we do not need sound model") 
+        print("Sound Model Requirement is Off") 
         rules_dict_sound = rules_dict
     
     repair_net = 1
