@@ -80,13 +80,6 @@ def export_pnml(precise_net, im, fm, net_name=None):
         net_name = net_name+".pnml"
     
     settings.PNML_PATH = None
-    # if precise_net == None:
-    #     precise_net = settings.PETRI_NET
-    
-    # if im == None:
-    #     im = settings.I_MARKS_ORIG
-    # if fm == None:
-    #     fm = settings.F_MARKS_ORIG
     
     pnml_path = os.path.join(settings.NET_PATH, net_name)
     pnml_exporter.apply(precise_net, im, pnml_path)
@@ -229,7 +222,6 @@ def discover_sound_petrinet(rules_dict, net):
             
     return net
 
-
 def repair_sound_Model(s_net, rules_dict, support, confidence, lift, sound=1):
     rules = {}
     
@@ -287,12 +279,14 @@ def get_soundness():
 
 def get_precision(pn_net, im, fm):
     log = settings.EVENT_LOG
-    prec = precision_evaluator.apply(log, pn_net, im, fm, variant=precision_evaluator.Variants.ALIGN_ETCONFORMANCE)
+    #prec = precision_evaluator.apply(log, pn_net, im, fm, variant=precision_evaluator.Variants.ALIGN_ETCONFORMANCE)
+    prec = precision_evaluator.apply(log, pn_net, im, fm, variant=precision_evaluator.Variants.ETCONFORMANCE_TOKEN)
     return prec
 
 def get_fitness(net, im, fm):
     log = settings.EVENT_LOG
-    fitness = replay_fitness_evaluator.apply(log, net, im, fm, variant=replay_fitness_evaluator.Variants.ALIGNMENT_BASED)
+    #fitness = replay_fitness_evaluator.apply(log, net, im, fm, variant=replay_fitness_evaluator.Variants.ALIGNMENT_BASED)
+    fitness = replay_fitness_evaluator.apply(log, net, im, fm, variant=replay_fitness_evaluator.Variants.TOKEN_BASED)
     return fitness
 
 def repair_unsound_model(net, rules_dict, support, confidence, lift):
