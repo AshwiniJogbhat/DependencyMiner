@@ -8,8 +8,8 @@ Given a log path and set of parameters, the dependency_miner algorithm is respon
   - $ pip install pm4py=2.2.8
 - [FastAPI](https://fastapi.tiangolo.com/tutorial/) 0.63.0 
 - In a virtual environment, FastAPI can be downloaded as  
--- $pip install fastapi 
--- $pip install uvicorn 
+   - $pip install fastapi 
+   - $pip install uvicorn 
 
 
 ## Installation Instruction
