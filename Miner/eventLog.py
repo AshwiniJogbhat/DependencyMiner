@@ -10,13 +10,37 @@ import copy
 
 log_attributes = {}
 def import_event_log(log_path):
+    """
+    Given an event log, it improts and get the details for the log
+    
+    Parameter:
+    log_path (str): Path of the log
+    
+    Returns:
+    Event log (EventLog): Imported event log
+    """
     EVENT_LOG = xes_importer.apply(log_path)
     return EVENT_LOG
 
 def get_event_log():
+    """
+    Get all event logs uploaded to the tool
+    
+    Returns:
+    list_of_logs (list): Imported event log list
+    """
     return [f for f in listdir(settings.EVENT_LOGS_PATH) if isfile(join(settings.EVENT_LOGS_PATH, f))]
 
 def upload_event_log(file):
+    """
+    Given a log file, it uploads the event log to the static/Event Log folder
+    
+    Parameter:
+    log_file (file) : Event log file
+    
+    Returns:
+    eventlogs (list): Uploaded event logs
+    """
     upload_folder = open(os.path.join(settings.EVENT_LOGS_PATH, file.filename), 'wb+')
     file_object = file.file
     shutil.copyfileobj(file_object, upload_folder)
@@ -25,6 +49,21 @@ def upload_event_log(file):
     return eventlogs
 
 def set_event_log(log_list):
+    """
+    Given an input event log, the function imports the log and returns discovered process tree 
+    and petri net model along with the details of the log. 
+    Parameters:
+        file_path (str): Path of event log
+        
+    Returns:
+        eventlogs (list): List of event logs
+        log_attributes (dict): Details of the log
+        log (EventLog) : Imported event log 
+        tree (processtree): Discovered Process tree from the given event log
+        net (PetriNet) : Discovered Petri net from the given event log
+        im (Marking) : Initial marking of the generated Petri net
+        fm (Marking) : Final marking of the generated Petri net
+    """
     filename = log_list
     settings.EVENT_LOG_NAME = filename
     file_path = os.path.join(settings.EVENT_LOGS_PATH, filename) 

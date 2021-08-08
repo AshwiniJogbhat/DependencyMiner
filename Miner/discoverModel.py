@@ -38,11 +38,29 @@ def display_process_tree():
     return tree_path
 
 def discover_process_tree(log):
+    """
+    Given an event log, the function discovers the process tree using inductive miner algorithm. 
+    
+    Parameters:
+        log (EventLog): Given event log
+        
+    Returns:
+        tree (ProcessTree): The generated Process tree from the log
+    """
     tree = inductive_miner.apply_tree(log)
     settings.PROCESS_TREE = tree
     return tree
 
 def display_petri_net(net=None):
+    """
+    The function exports the Petri net in .SVG format and saves it in current directory
+    
+    Parameter:
+        net (PetriNet) :  Petri net model to be stored in .SVG format
+    
+    Returns:
+        net_path (str): The path of the saved Petri net model in .SVG form
+    """
     if net == None :
         net = settings.PETRI_NET
         
@@ -58,6 +76,17 @@ def display_petri_net(net=None):
 
 
 def discover_petri_net(tree):
+    """
+    Given a process tree, the function generates the corresponding petri net. 
+    
+    Parameters:
+        tree (ProcessTree): The discovered process tree from the given event log
+        
+    Returns:
+        net (PetriNet): Generated Petri net of the log
+        im (Marking) : Initial marking of the generated Petri net
+        fm (Marking) : Final marking of the generated Petri net
+    """
     orig_net = None
     im = None
     fm = None
@@ -74,6 +103,18 @@ def discover_petri_net(tree):
     return orig_net, im, fm
 
 def export_pnml(precise_net, im, fm, net_name=None):
+    """
+    The function exports the Petri net in pnml format and saves it in current directory
+    
+    Parameter:
+        precise_net (PetriNet) :  Petri net model to be stored in .pnml format
+        im (Marking) :  Initial marking of the generated Petri net
+        fm (Marking) :  Final marking of the generated Petri net 
+        net_name (str) : Any prefered name to be stored, by default it is the log name
+    
+    Returns:
+        pnml_path (str): The path of the saved Petri net model in .pnml form
+    """
     if net_name == None:
         net_name = f"{settings.EVENT_LOG_NAME}"
         net_name = net_name.rsplit('.', 1)[0]
@@ -88,6 +129,14 @@ def export_pnml(precise_net, im, fm, net_name=None):
     return pnml_path
     
 def findAsociationRules():
+    """
+    This function mines the long-term dependency rules between XOR branches of the process tree. 
+    Parameters:
+        
+    Returns:
+        Rules (dict) : Discovered rules between XOR branches of the process tree
+        XOR blocks (dict) : Candidate XOR blocks present in the process tree 
+    """
     tree = settings.PROCESS_TREE 
     log = settings.EVENT_LOG 
     # Explore Log
@@ -142,6 +191,16 @@ def findAsociationRules():
     return sorted_rule_dict, xor_tree
 
 def soundness_at_XOR_tree(rules):
+    """
+    Preserving Soundness between XOR blocks based on the highest lift value.
+    
+    Parameters:
+        rules (dict) : Discovered rules and their XOR blocks
+    
+    Return:
+        Sound XOR blocks pair (dict) : Sound XOR block pairs to be used for generating sound Precise net
+    
+    """
     sound_xor_rule = {}
     keys_to_be_removed = []
     key_copy = tuple(rules.keys())
@@ -159,6 +218,16 @@ def soundness_at_XOR_tree(rules):
     return sound_xor_rule
 
 def discover_sound_petrinet(rules_dict, net):
+    """
+    Discover Intermediate Petri net which preserves soundness between XOR branches.
+    
+    Parameter: 
+        rules (dict) : Discovered rules with the association rule metrics values
+        net (PetriNet): Generated Petri net of the log
+    
+    Return:
+        net (PetriNet): Intermediate Petri net of the log
+    """
     for pair in rules_dict:
         trans_exist = 0
         #if the place already exists, We do not need to add new places, just use existing ones
@@ -223,6 +292,22 @@ def discover_sound_petrinet(rules_dict, net):
     return net
 
 def repair_sound_Model(s_net, rules_dict, support, confidence, lift, sound=1):
+    """
+    Repairing a bordered Petri net generated from Process tree to include long-term dependencies in it and
+    create a precise Petri net. Soundness parameter is a given requirement.
+    
+    Parameter: 
+        net (PetriNet): Generated Petri net of the log
+        rules (dict) : Discovered rules with the association rule metrics values
+        support (str): Threshold value for support
+        confidence (str) : Threshold value for confidence 
+        lift (str): Threshold value for confidence 
+        sound (str) : Yes
+    
+    Return:
+        net (PetriNet): Repaired Sound Petri net of the log
+        rules (dict) : Added rules to the net with their association rule metrics values
+    """
     rules = {}
     
     rules_dict = dict(sorted(rules_dict.items(), key=lambda item: item[1][2]))
@@ -274,22 +359,60 @@ def repair_sound_Model(s_net, rules_dict, support, confidence, lift, sound=1):
     return s_net, rules
 
 def get_soundness():
+    """
+    Returns the soundness of the model.
+    """
     return check_soundness(settings.PETRI_NET, settings.I_MARKS_ORIG, settings.F_MARKS_ORIG)
     
 
 def get_precision(pn_net, im, fm):
+    """
+    Returns the precision of the model.
+    Parameter: 
+        net (PetriNet): Generated Petri net of the log
+        im (Marking) : Initial marking of the generated Petri net
+        fm (Marking) : Final marking of the generated Petri net
+    Return:
+        Precision (float) : Precision value measured using pm4py 
+    
+    """
     log = settings.EVENT_LOG
     #prec = precision_evaluator.apply(log, pn_net, im, fm, variant=precision_evaluator.Variants.ALIGN_ETCONFORMANCE)
     prec = precision_evaluator.apply(log, pn_net, im, fm, variant=precision_evaluator.Variants.ETCONFORMANCE_TOKEN)
     return prec
 
 def get_fitness(net, im, fm):
+    """
+    Returns the fitness of the model.
+    Parameter: 
+        net (PetriNet): Generated Petri net of the log
+        im (Marking) : Initial marking of the generated Petri net
+        fm (Marking) : Final marking of the generated Petri net
+    Return:
+        Fitness (float) : Fitness value measured using pm4py 
+    
+    """
     log = settings.EVENT_LOG
     #fitness = replay_fitness_evaluator.apply(log, net, im, fm, variant=replay_fitness_evaluator.Variants.ALIGNMENT_BASED)
     fitness = replay_fitness_evaluator.apply(log, net, im, fm, variant=replay_fitness_evaluator.Variants.TOKEN_BASED)
     return fitness
 
 def repair_unsound_model(net, rules_dict, support, confidence, lift):
+    """
+    Repairing a bordered Petri net generated from Process tree to include long-term dependencies in it and
+    create a precise Petri net. Soundness parameter is not given.
+    
+    Parameter: 
+        net (PetriNet): Generated Petri net of the log
+        rules (dict) : Discovered rules with the association rule metrics values
+        support (str): Threshold value for support
+        confidence (str) : Threshold value for confidence 
+        lift (str): Threshold value for confidence 
+    
+    Return:
+        net (PetriNet): Repaired Petri net of the log
+        rules (dict) : Added rules to the net with their association rule metrics values
+    """
     rules = {}
     # p_net, im, fm = discover_petri_net(settings.PROCESS_TREE)
     for pair, value in rules_dict.items():
@@ -357,6 +480,22 @@ def repair_unsound_model(net, rules_dict, support, confidence, lift):
     
     
 def repair_petri_net(support, confidence, lift, sound):
+    """
+    Given a Petri net and threshold values, the functions repair the free-choice Petri net
+    
+    Parameter:
+        support (str): Threshold value for support
+        confidence (str) : Threshold value for confidence 
+        lift (str): Threshold value for confidence 
+        sound (str) : sound model requirement Yes/No    
+    
+    Returns:
+        net_path (str) : Path of the .SVG file generated for the repaired net
+        precision (float): Improved precision value
+        fitness (float): Fitness of the repaired Petri net
+        rules (dict): Rules added to the repaired precise net
+        pnml_path (str) : Path of the .pnml file generated for the repaired net
+    """
     
     p_net = None
     im = None
@@ -411,10 +550,10 @@ def repair_petri_net(support, confidence, lift, sound):
     #sound_net = discover_sound_petrinet(rules_dicti, p_net)
     #repaired_net, rules = repair_Model(sound_net, rules_dicti, support, confidence, lift, sound)
     
-        settings.PETRI_NET = None
-        settings.PETRI_NET = repaired_net
-        settings.RULES = rules
-        
+    settings.PETRI_NET = None
+    settings.PETRI_NET = repaired_net
+    settings.RULES = rules
+    
     precision = get_precision(settings.PETRI_NET ,im, fm)
     fitness = get_fitness(settings.PETRI_NET, im, fm)
     

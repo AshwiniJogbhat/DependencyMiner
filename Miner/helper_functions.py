@@ -12,6 +12,15 @@ def check_subtree(tree):
     return is_subtree
 
 def get_xor_leaves(xor_tree, leaves=None):
+    """
+    Given a xor tree, this function returns the leaves of the tree.
+    
+    Parameter:
+        xor_tree (ProcessTree): XOR block
+    
+    Returns:
+        leaves (list) : Leaves of the XOR trees
+    """
     tau_exist = 0
     leaves = leaves if leaves is not None else []
     if len(xor_tree.children) == 0:
@@ -23,6 +32,17 @@ def get_xor_leaves(xor_tree, leaves=None):
     return leaves
 
 def get_ancestors_operator(t, until, include_until = True):
+    """
+    Given an XOR block and lowest common ancestor(LCA), 
+    the method returns all operators present in the path from XOR branch to LCA, adapted from PM4Py.
+    
+    Parameter:
+        t (ProcessTree) : Source XOR block 
+        until (ProcessTree) : LCA of those XOR blocks
+    
+    Returns:
+        ancestors (Operator): All operators present in the path from XOR block to the given LCA
+    """
     ancestors = list()
     if t == until:
         return ancestors
@@ -45,6 +65,15 @@ def is_xor_exists(node):
     return False
 
 def get_xor_children(node, xor_list=None):
+    """
+    Given a process tree, this function returns the activity involved in the tree.
+    
+    Parameter:
+        xor_list (list): Activity involved in the branch tree
+    
+    Returns:
+        bool : True if tau exists, else False
+    """
     xor_list = xor_list if xor_list is not None else {}
     for child in node.children:
         if len(get_xor_leaves(child)) > 0:
@@ -59,11 +88,15 @@ def get_xor_children_copy(node, xor_list=None):
     return xor_list
 
 def check_for_tau(tree):
-    # leaves = g.get_leaves(tree)
-    # for leaf in leaves:
-    #     if g.is_tau_leaf(leaf):
-    #         print("Tau Exists", leaf)
-    #         return True
+    """
+    Given a process tree, this function checks whether invisible node exists in the tree.
+    
+    Parameter:
+        tree (ProcessTree): Generated Process tree for the given log
+    
+    Returns:
+        bool : True if tau exists, else False
+    """
     for node in tree.children:
         leaves = g.get_leaves(node)
         if len(leaves) == 1:
@@ -72,6 +105,16 @@ def check_for_tau(tree):
                     return True
         
 def get_xor_trees(pt, xor_tree = None):
+    """
+        Given a process tree, it extracts all XOR block from the process tree
+        
+        Parameter:
+            pt (ProcessTree) : Generated process tree from the log
+            xor_tree (list) : All XOR blocks list, at the beginning it is empty
+        
+        Returns:
+            xor_tree (str): All extracted XOR blocks from the process tree     
+    """
     xor_tree = xor_tree if xor_tree is not None else {}
     if pt.operator != None:
         for node in pt.children:
@@ -83,6 +126,17 @@ def get_xor_trees(pt, xor_tree = None):
     return xor_tree
 
 def get_candidates(node1, node2):
+    """
+    Given two XOR branches, checks whether the given branches are in sequential order.
+    
+    Parameter:
+        node1 (ProcessTree) : Source XOR blocks
+        node2 (ProcessTree) : All XOR blocks list, at the beginning it is empty
+    
+    Returns:
+        XOR_source (list) : source branches of the candidate XOR blocks pair
+        XOR_target (list) : target branches of the candidate XOR blocks pair
+    """
     XOR_source = []
     XOR_target = []
     if g.common_ancestor(node1, node2).operator == pt_op.SEQUENCE:
@@ -116,6 +170,19 @@ def get_support(pair, variants, total):
     return sup
                   
 def get_lift(pair, confidence, variants, total):
+    """
+    Given a long-term dependency rules, confidence value of the rule,
+    It calculates the lift of the rule.
+    
+    Parameter:
+        pair (dict) : Long-term dependency rules
+        confidence (str) : Confidence of the rule
+        variants (dict) : Unique traces with the count of those traces
+        total (str) : Total number of traces in Event log
+    
+    Returns:
+        lift (str): Lift value of the rule
+    """
     rhs_c = 0
     for item in variants:
         for i in range(0, len(pair[1])):
@@ -129,6 +196,20 @@ def get_lift(pair, confidence, variants, total):
     return lift
 
 def get_support_updated(pair, variants, total, source, target):
+    """
+    Given a long-term dependency rules, variants of the event log and total number of traces
+    It calculates the support value of the rule.
+    
+    Parameter:
+        pair (dict) : Long-term dependency rules
+        variants (dict) : Unique traces with the count of those traces
+        total (str) : Total number of traces in Event log
+        source (list) : All source XOR branches
+        target (list) : All target XOR branches
+    
+    Returns:
+        sup (dict): Support value of the rule
+    """
     lhs_c = 0
     rule_count = 0
     l_found = 0
@@ -171,6 +252,19 @@ def get_support_updated(pair, variants, total, source, target):
     return sup
 
 def get_confidence(pair, sup, variants, total):
+    """
+    Given a long-term dependency rules, variants of the event log and total number of traces
+    It calculates the confidence value of the rule.
+    
+    Parameter:
+        pair (dict) : Long-term dependency rules
+        support (dict) : support of the rule
+        variants (dict) : Unique traces with the count of those traces
+        total (str) : Total number of traces in Event log
+    
+    Returns:
+        conf (str): Confidence value of the rule
+    """
     lhs_c = 0
     for item in variants:
         trace = item['variant'].split(",")
