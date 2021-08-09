@@ -14,6 +14,7 @@ Given a log path and set of parameters, the dependency_miner algorithm is respon
 
 ## Installation Instruction
 - Check out the source code using git: git clone https://github.com/AshwiniJogbhat/DependencyMiner.git
+- Go to /DependencyMiner folder
 - Execute the following command: git init
 - Install Requirements: $pip install -r requirement.txt
 - Check for two folders PetriNet and ProcessTrees in <path>\DependencyMiner\static
